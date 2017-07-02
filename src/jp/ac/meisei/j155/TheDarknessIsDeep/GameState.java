@@ -1,5 +1,6 @@
 package jp.ac.meisei.j155.TheDarknessIsDeep;
 public class GameState {
+	//ゲームの状態
 	enum States{
 		Title,
 		Game,
@@ -7,10 +8,19 @@ public class GameState {
 		Gameover,
 		Result;
 	}
+	//スコア
 	int score;
+	
+	//生存時間の予定(消すかも)
 	int time;
+	
+	//推移を格納するやる
 	States state;
+	
+	//プレイヤー(一人のみ。対戦する場合配列にする(完成したら)。newしてないから気をつけて)
 	Human player;
+	
+	//敵(たくさん呼ぶように配列にした。newしてないから気をつけて)
 	Human[] enemy;
 	GameState(){
 		States state = States.Title;
