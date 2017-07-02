@@ -34,7 +34,7 @@ public class Human {
 		bomb--;
 	}
 
-	//表示系  falseならゲーム上から消える
+	//表示系  falseならゲーム上から消える予定
 	public boolean getShow(){
 		return show;
 	}
