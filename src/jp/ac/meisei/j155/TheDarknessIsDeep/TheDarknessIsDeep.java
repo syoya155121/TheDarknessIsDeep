@@ -1,18 +1,11 @@
 package jp.ac.meisei.j155.TheDarknessIsDeep;
 
-import java.awt.EventQueue;
+import javax.swing.JFrame;
 
-public class TheDarknessIsDeep {
+public class START {
 	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					TdidMainGui frame = new TdidMainGui();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
+		MainGui f = new MainGui();
+		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        f.setVisible(true);
 	}
 }
