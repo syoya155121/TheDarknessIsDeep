@@ -30,7 +30,7 @@ public class GuiTitle extends JPanel {
 		gamestartLabel.setFont(new Font("Impact", Font.PLAIN, 30));
 		gamestartLabel.addMouseListener(new MouseListener(){
 			public void mouseClicked(MouseEvent e) {
-				System.out.println("aaaa");
+				System.out.println("gamestart");
 			}
 			public void mouseEntered(MouseEvent e) {
 				// TODO 自動生成されたメソッド・スタブ
@@ -50,7 +50,7 @@ public class GuiTitle extends JPanel {
 		optionLabel.setFont(new Font("Impact", Font.PLAIN, 30));
 		optionLabel.addMouseListener(new MouseListener(){
 			public void mouseClicked(MouseEvent e) {
-				System.out.println("aaaa");
+				System.out.println("option");
 			}
 			public void mouseEntered(MouseEvent e) {
 				// TODO 自動生成されたメソッド・スタブ
