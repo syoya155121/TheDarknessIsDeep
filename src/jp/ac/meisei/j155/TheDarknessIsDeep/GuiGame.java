@@ -7,6 +7,6 @@ public class GuiGame extends JPanel{
 	JLabel score,scoreNum,life,lifeNum,bomb,bombNum,exit;
 
 	GuiGame(GameState gs){
-
+		
 	}
 }

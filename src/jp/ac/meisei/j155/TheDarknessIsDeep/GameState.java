@@ -1,4 +1,8 @@
 package jp.ac.meisei.j155.TheDarknessIsDeep;
+
+import java.sql.Time;
+import java.time.LocalDateTime;
+
 public class GameState {
 	//ゲームの状態
 	enum States{
@@ -8,30 +12,57 @@ public class GameState {
 		Result,
 		TheEnd;
 	}
+	//推移を格納するやつ
+	private States state;
+
+	public States getState(){
+		return state;
+	}
+	public void setState(States s){
+		state = s;
+	}
+
 	//スコア
-	int score;
+	private int score;
+	public int getScore(){
+		return score;
+	}
+	public void setState(int num){
+		score = num;
+	}
+	public void sumState(int num){
+		score += num;
+	}
+	public void subState(int num){
+		score -= num;
+	}
 
 	//生存時間の予定(消すかも)
-	int time;
-
-	//推移を格納するやつ
-	States state;
+	//FIXME
 
 	//クリアフラグのやつ
-	boolean clear = false;
+	private boolean clearFlag = false;
+	public boolean getClearFlag(){
+		return clearFlag;
+	}
+	public void setClearFlag(){
+		clearFlag = true;
+	}
+	public void resetClearFlag(){
+		clearFlag = false;
+	}
 
 	//プレイヤー(一人のみ。対戦する場合配列にする(完成したら)。newしてないから気をつけて)
-	Human player;
+	private Human player;
 
 	//敵(たくさん呼ぶように配列にした。newしてないから気をつけて)
-	Human[] enemy;
+	private Human[] enemy;
 
 	//オプションのやつ キーボード<->マウス の予定 (初期はキーボード)
-	boolean kbdTOMus = false;
+	private boolean kbdTOMus = false;
 
 	GameState(){
 		States state = States.Title;
 		score=0;
-
 	}
 }

@@ -6,12 +6,13 @@ import java.awt.event.MouseListener;
 
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.SwingConstants;
 
 import jp.ac.meisei.j155.TheDarknessIsDeep.GameState.States;
 
 public class GuiTitle extends JPanel {
 	JLabel titleLabel,gamestartLabel,optionLabel,exitLabel;
+	MainGui mg;
+
 	public GuiTitle(GameState gs){
 		setName("Title");
 		setLayout(null);
@@ -50,7 +51,8 @@ public class GuiTitle extends JPanel {
 		optionLabel.setFont(new Font("Impact", Font.PLAIN, 30));
 		optionLabel.addMouseListener(new MouseListener(){
 			public void mouseClicked(MouseEvent e) {
-				gs.state=States.Game;
+				gs.setState(States.Option);
+				mg.changePanel(gs.getState());
 				}
 			public void mouseEntered(MouseEvent e) {optionLabel.setForeground(new Color(235,121,136));}
 			public void mouseExited(MouseEvent e) {optionLabel.setForeground(new Color(255,255,255));}
