@@ -11,8 +11,6 @@ public class MainGui extends JFrame {
 	GuiResult result = new GuiResult(state);
 	GuiTheEnd theEnd = new GuiTheEnd(state);
 
-
-
 	public MainGui() {
 		setResizable(false);
 		getContentPane().add(title);
