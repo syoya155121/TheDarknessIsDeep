@@ -18,13 +18,17 @@ public class GameState {
 	States state;
 
 	//クリアフラグのやつ
-	boolean clear;
+	boolean clear = false;
 
 	//プレイヤー(一人のみ。対戦する場合配列にする(完成したら)。newしてないから気をつけて)
 	Human player;
 
 	//敵(たくさん呼ぶように配列にした。newしてないから気をつけて)
 	Human[] enemy;
+
+	//オプションのやつ キーボード<->マウス の予定 (初期はキーボード)
+	boolean kbdTOMus = false;
+
 	GameState(){
 		States state = States.Title;
 		score=0;

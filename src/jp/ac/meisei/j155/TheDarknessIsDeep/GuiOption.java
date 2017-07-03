@@ -4,7 +4,7 @@ import javax.swing.JPanel;
 
 public class GuiOption extends JPanel{
 
-	GuiOption(){
+	GuiOption(GameState gs){
 
 	}
 }
