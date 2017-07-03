@@ -18,3 +18,7 @@
 + まねきねこ http://yms.main.jp/  
 + かぼちゃ http://dvdm.blog134.fc2.com/blog-entry-100.html  
 + ポストとか http://yms.main.jp/page3/chara02.html  
+
+### 参考URL  
++ GUI http://nowloading.blog.jp/archives/36741210.html  
++ いろいろ http://www.sist.ac.jp/~suganuma/game/Java/  
