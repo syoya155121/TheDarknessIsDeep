@@ -11,13 +11,14 @@ import jp.ac.meisei.j155.TheDarknessIsDeep.GameState.States;
 
 public class GuiTitle extends JPanel {
 	JLabel titleLabel,gamestartLabel,optionLabel,exitLabel;
-	MainGui mg;
 
-	public GuiTitle(GameState gs){
+
+	public GuiTitle(){
 		setName("Title");
 		setLayout(null);
 		setSize(1000,750);
 		setBackground(new Color(0,0,0));
+
 		titleLabel = new JLabel("The Darkness is Deep");
 		titleLabel.setBounds(0, 50, 1000, 100);
 		titleLabel.setForeground(new Color(255,255,255));
@@ -33,13 +34,8 @@ public class GuiTitle extends JPanel {
 			public void mouseClicked(MouseEvent e) {
 				System.out.println("gamestart");
 			}
-			public void mouseEntered(MouseEvent e) {
-				// TODO 自動生成されたメソッド・スタブ
-				gamestartLabel.setForeground(new Color(235,121,136));
-			}
-			public void mouseExited(MouseEvent e) {
-				gamestartLabel.setForeground(new Color(255,255,255));
-			}
+			public void mouseEntered(MouseEvent e) {gamestartLabel.setForeground(new Color(235,121,136));}
+			public void mouseExited(MouseEvent e) {gamestartLabel.setForeground(new Color(255,255,255));}
 			public void mousePressed(MouseEvent e) {}
 			public void mouseReleased(MouseEvent e) {}
 		});
@@ -51,9 +47,9 @@ public class GuiTitle extends JPanel {
 		optionLabel.setFont(new Font("Impact", Font.PLAIN, 30));
 		optionLabel.addMouseListener(new MouseListener(){
 			public void mouseClicked(MouseEvent e) {
-				gs.setState(States.Option);
-				mg.changePanel(gs.getState());
-				}
+				GameState.setState(States.Option);
+				MainGui.changePanel(GameState.getState());
+			}
 			public void mouseEntered(MouseEvent e) {optionLabel.setForeground(new Color(235,121,136));}
 			public void mouseExited(MouseEvent e) {optionLabel.setForeground(new Color(255,255,255));}
 			public void mousePressed(MouseEvent e) {}
@@ -66,15 +62,9 @@ public class GuiTitle extends JPanel {
 		exitLabel.setHorizontalAlignment(JLabel.CENTER);
 		exitLabel.setFont(new Font("Impact", Font.PLAIN, 30));
 		exitLabel.addMouseListener(new MouseListener(){
-			public void mouseClicked(MouseEvent e) {
-				System.exit(0);
-			}
-			public void mouseEntered(MouseEvent e) {
-				exitLabel.setForeground(new Color(235,121,136));
-			}
-			public void mouseExited(MouseEvent e) {
-				exitLabel.setForeground(new Color(255,255,255));
-			}
+			public void mouseClicked(MouseEvent e) {System.exit(0);}
+			public void mouseEntered(MouseEvent e) {exitLabel.setForeground(new Color(235,121,136));}
+			public void mouseExited(MouseEvent e) {exitLabel.setForeground(new Color(255,255,255));}
 			public void mousePressed(MouseEvent e) {}
 			public void mouseReleased(MouseEvent e) {}
 		});
@@ -83,8 +73,5 @@ public class GuiTitle extends JPanel {
 		add(gamestartLabel);
 		add(optionLabel);
 		add(exitLabel);
-	}
-	public void mouseClicked(MouseEvent e){
-
 	}
 }

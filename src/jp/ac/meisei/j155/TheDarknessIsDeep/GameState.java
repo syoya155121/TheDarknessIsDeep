@@ -5,7 +5,7 @@ import java.time.LocalDateTime;
 
 public class GameState {
 	//ゲームの状態
-	enum States{
+	static enum States{
 		Title,
 		Game,
 		Option,
@@ -13,27 +13,27 @@ public class GameState {
 		TheEnd;
 	}
 	//推移を格納するやつ
-	private States state;
+	private static States state;
 
-	public States getState(){
+	static States getState(){
 		return state;
 	}
-	public void setState(States s){
+	static void setState(States s){
 		state = s;
 	}
 
 	//スコア
-	private int score;
-	public int getScore(){
+	private static int score;
+	public static int getScore(){
 		return score;
 	}
-	public void setState(int num){
+	public static void setState(int num){
 		score = num;
 	}
-	public void sumState(int num){
+	public static void sumState(int num){
 		score += num;
 	}
-	public void subState(int num){
+	public static void subState(int num){
 		score -= num;
 	}
 
@@ -41,25 +41,25 @@ public class GameState {
 	//FIXME
 
 	//クリアフラグのやつ
-	private boolean clearFlag = false;
-	public boolean getClearFlag(){
+	private static boolean clearFlag = false;
+	public static boolean getClearFlag(){
 		return clearFlag;
 	}
-	public void setClearFlag(){
+	public static void setClearFlag(){
 		clearFlag = true;
 	}
-	public void resetClearFlag(){
+	public static void resetClearFlag(){
 		clearFlag = false;
 	}
 
 	//プレイヤー(一人のみ。対戦する場合配列にする(完成したら)。newしてないから気をつけて)
-	private Human player;
+	private static Human player;
 
 	//敵(たくさん呼ぶように配列にした。newしてないから気をつけて)
-	private Human[] enemy;
+	private static Human[] enemy;
 
 	//オプションのやつ キーボード<->マウス の予定 (初期はキーボード)
-	private boolean kbdTOMus = false;
+	private static boolean kbdTOMus = false;
 
 	GameState(){
 		States state = States.Title;

@@ -4,7 +4,7 @@ import javax.swing.JPanel;
 
 public class GuiResult extends JPanel{
 
-	GuiResult(GameState gs){
+	GuiResult(){
 
 	}
 }

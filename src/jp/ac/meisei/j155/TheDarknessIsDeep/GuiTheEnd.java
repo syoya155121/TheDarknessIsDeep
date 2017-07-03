@@ -4,7 +4,7 @@ import javax.swing.JPanel;
 
 public class GuiTheEnd extends JPanel{
 
-	GuiTheEnd(GameState gs){
+	GuiTheEnd(){
 
 	}
 }
