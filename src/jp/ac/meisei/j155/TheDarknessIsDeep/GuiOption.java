@@ -32,17 +32,15 @@ public class GuiOption extends JPanel{
 		title.setHorizontalAlignment(JLabel.CENTER);
 		title.setFont(new Font("Impact", Font.PLAIN, 80));
 
-
 		kb = new JRadioButton("");
 		kb.setSelected(true);
 		kb.setBounds(420, 210, 28, 23);
 
 		ms = new JRadioButton("");
-		ms.setBounds(720, 210, 28, 23);
+		ms.setBounds(710, 210, 28, 23);
 		ButtonGroup group = new ButtonGroup();
 		group.add(kb);
 		group.add(ms);
-
 
 		ope = new JLabel("Oparation");
 		ope.setBounds(50, 185, 272, 65);
