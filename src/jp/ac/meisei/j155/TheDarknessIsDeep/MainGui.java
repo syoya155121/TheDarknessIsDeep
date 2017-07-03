@@ -2,8 +2,9 @@ package jp.ac.meisei.j155.TheDarknessIsDeep;
 import javax.swing.JFrame;
 
 public class MainGui extends JFrame {
-	GuiTitle title = new GuiTitle();
 	GameState state = new GameState();
+	GuiTitle title = new GuiTitle(state);
+	GuiGame game = new GuiGame(state);
 
 	public MainGui() {
 		setResizable(false);
