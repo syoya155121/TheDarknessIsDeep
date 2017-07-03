@@ -11,8 +11,7 @@ import javax.swing.SwingConstants;
 public class GuiTitle extends JPanel {
 	JLabel titleLabel,gamestartLabel,optionLabel,exitLabel;
 	MainGui mg;
-	public GuiTitle(MainGui m) {
-		mg=m;
+	public GuiTitle(){
 		setName("Title");
 		setLayout(null);
 		setSize(1000,750);
