@@ -4,6 +4,7 @@
   
 ### GUI系  
 + @syoya 画面推移させる  
+    + @syoya title <-> option ok
 + @syoya ゲーム画面は少し待って  
   
 ### GameState  
