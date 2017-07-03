@@ -7,7 +7,7 @@ public class MainGui extends JFrame {
 	static GameState state = new GameState();
 	static GuiTitle title = new GuiTitle();
 	static GuiOption option = new GuiOption();
-	static GuiGame game = new GuiGame();
+	static GuiGame1 game = new GuiGame1();
 	static GuiResult result = new GuiResult();
 	static GuiTheEnd theEnd = new GuiTheEnd();
 
