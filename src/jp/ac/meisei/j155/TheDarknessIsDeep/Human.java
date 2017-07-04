@@ -1,16 +1,29 @@
 package jp.ac.meisei.j155.TheDarknessIsDeep;
+
+import java.awt.Image;
+import java.io.File;
+
+import javax.imageio.ImageIO;
+
 public class Human {
 	private Point p;
 	private int life;
 	private int bomb;
 	private int shoot;
+	private Image img;
 	private boolean show;
 
-	Human(){
+	Human(String file){
+		try {
+			img = ImageIO.read(new File(file));
+		} catch (Exception e) {
+			System.out.println("error Picture");
+		}
 		p=new Point(-1,-1);
 		life=3;
 		bomb=3;
 		show=false;
+
 	}
 	//Life系
 	public int getLife(){
