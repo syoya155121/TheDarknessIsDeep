@@ -8,21 +8,21 @@ public class enemy extends Human {
 	int width = 32;   // 敵の幅
 	int height = 64;   // 敵の高さ
 	int x, y;   // 敵の位置
-	
+
 	public enemy(){
 
 		// 敵画像の読み込み
 		String filename = "Enemy1.png";
 		Image image = Toolkit.getDefaultToolkit().getImage(filename);
 
-		
+
 		// 敵の初期位置
 		x = 800;
 		y = 400;
 	}
-	
-	public void run(){
-		while(){
-		
-	}
+
+//	public void run(){
+//		while(){
+//
+//	}
 }
