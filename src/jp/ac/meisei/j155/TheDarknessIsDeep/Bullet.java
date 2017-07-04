@@ -4,7 +4,7 @@ import java.awt.*;
 
 public class Bullet extends Human{
 	Bullet(){
-
+		
 	}
 	private int x,y,vx,vy;
 //プレーヤー弾　直線　弾=丸　一時的
