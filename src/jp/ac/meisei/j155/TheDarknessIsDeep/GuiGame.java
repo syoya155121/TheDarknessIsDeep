@@ -13,6 +13,7 @@ import jp.ac.meisei.j155.TheDarknessIsDeep.GameState.States;
 
 public class GuiGame extends JPanel{
 	JLabel score,scoreNum,life,lifeNum,bomb,bombNum,debug;
+	
 	GuiGame(){
 		setName("Game");
 		setLayout(null);
