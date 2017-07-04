@@ -4,8 +4,8 @@
   
 ### GUI系  
 + @syoya 画面推移させる  
-    + @syoya title <-> option ok
-+ @syoya ゲーム画面は少し待って  
+    + @syoya title <-> option <-> Game ok  
++ @syoya ゲーム画面は少し完成  
   
 ### GameState  
 + @syoya 名前複数形じゃね？  
