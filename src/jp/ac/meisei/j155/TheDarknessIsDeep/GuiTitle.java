@@ -32,7 +32,8 @@ public class GuiTitle extends JPanel {
 		gamestartLabel.setFont(new Font("Impact", Font.PLAIN, 30));
 		gamestartLabel.addMouseListener(new MouseListener(){
 			public void mouseClicked(MouseEvent e) {
-				System.out.println("gamestart");
+				GameState.setState(States.Game);
+				MainGui.changePanel(GameState.getState());
 			}
 			public void mouseEntered(MouseEvent e) {gamestartLabel.setForeground(new Color(235,121,136));}
 			public void mouseExited(MouseEvent e) {gamestartLabel.setForeground(new Color(255,255,255));}

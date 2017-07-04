@@ -66,8 +66,8 @@ public class GuiOption extends JPanel{
 		life.setHorizontalAlignment(JLabel.CENTER);
 		life.setFont(new Font("Impact", Font.PLAIN, 65));
 
-		lifeNum = new JLabel("3");
-		lifeNum.setBounds(600, 350, 42, 57);
+		lifeNum = new JLabel("99");
+		lifeNum.setBounds(600, 350, 76, 57);
 		lifeNum.setForeground(new Color(255,255,255));
 		lifeNum.setHorizontalAlignment(JLabel.CENTER);
 		lifeNum.setFont(new Font("Impact", Font.PLAIN, 65));
@@ -78,8 +78,8 @@ public class GuiOption extends JPanel{
 		bomb.setHorizontalAlignment(JLabel.CENTER);
 		bomb.setFont(new Font("Impact", Font.PLAIN, 65));
 
-		bombNum = new JLabel("3");
-		bombNum.setBounds(600, 470, 42, 57);
+		bombNum = new JLabel("99");
+		bombNum.setBounds(600, 470, 76, 57);
 		bombNum.setForeground(new Color(255,255,255));
 		bombNum.setHorizontalAlignment(JLabel.CENTER);
 		bombNum.setFont(new Font("Impact", Font.PLAIN, 65));
