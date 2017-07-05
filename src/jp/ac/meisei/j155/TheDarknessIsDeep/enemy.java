@@ -21,8 +21,9 @@ public class enemy extends Human {
 		y = 400;
 	}
 
-//	public void run(){
-//		while(){
-//
-//	}
+	public void run(){
+
+
+
+	}
 }
