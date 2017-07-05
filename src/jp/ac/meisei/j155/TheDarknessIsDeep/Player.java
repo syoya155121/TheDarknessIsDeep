@@ -6,7 +6,7 @@ import javax.imageio.ImageIO;
 import java.awt.event.KeyEvent;
 import java.io.File;
 
-public class Player{
+public class Player extends Human{
 	private int bulletType;
 	private int fra;
 	Human player;
