@@ -1,7 +1,5 @@
 package jp.ac.meisei.j155.TheDarknessIsDeep;
 
-//^^凸
-
 import java.awt.*;
 
 import javax.imageio.ImageIO;
