@@ -6,12 +6,14 @@ import java.io.File;
 import javax.imageio.ImageIO;
 
 public class Human {
-	private Point p;
+	private Point xy;
+	private Point Vxy;
 	private int life;
 	private int bomb;
-	private int shoot;
 	private Image img;
 	private boolean show;
+	private int shoot;
+	private final int shootMax=30;
 
 	Human(String file){
 		try {
@@ -19,7 +21,7 @@ public class Human {
 		} catch (Exception e) {
 			System.out.println("error Picture");
 		}
-		p=new Point(-1,-1);
+		xy=new Point(-100,-100);
 		life=3;
 		bomb=3;
 		show=false;
