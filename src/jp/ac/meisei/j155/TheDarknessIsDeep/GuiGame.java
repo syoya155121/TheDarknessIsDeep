@@ -83,7 +83,7 @@ public class GuiGame extends JPanel{
 
 		player = new Player();
 
-		while(loopGame());
+		//add(player.getImg());
 	}
 	private boolean loopGame(){
 		return false;

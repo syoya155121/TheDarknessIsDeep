@@ -4,20 +4,23 @@ import java.awt.Image;
 import java.io.File;
 
 import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
 
 public class Human {
 	private Point xy;
 	private Point Vxy;
 	private int life;
 	private int bomb;
-	private Image img;
+	private JLabel img;
 	private boolean show;
 	private int shoot;
 	private final int shootMax=30;
 
 	Human(String file,int x,int y){
 		try {
-			img = ImageIO.read(new File(file));
+			ImageIcon icon = new ImageIcon(file);
+			img = new JLabel(icon);
 		} catch (Exception e) {
 			System.out.println("error Picture");
 		}
@@ -27,6 +30,11 @@ public class Human {
 		show=false;
 
 	}
+	//img系
+	public JLabel getImg(){
+		return img;
+	}
+
 	//Life系
 	public int getLife(){
 		return life;
