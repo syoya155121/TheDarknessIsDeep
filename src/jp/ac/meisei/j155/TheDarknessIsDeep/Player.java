@@ -12,7 +12,8 @@ public class Player{
 	private int bulletType;
 	private int fra;
 	Human player;
-	public void Jiki() {
+
+	void player() {
 		player = new Human(".pic/player.png",100,300);
 	}
 }

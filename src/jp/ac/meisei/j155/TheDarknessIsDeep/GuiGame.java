@@ -80,10 +80,10 @@ public class GuiGame extends JPanel{
 		add(bomb);
 		add(bombNum);
 		add(debug);
-		
+
 		player = new Player();
 
-		while(loopGame());
+		//add(player.getImg());
 	}
 	private boolean loopGame(){
 		return false;
