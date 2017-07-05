@@ -15,13 +15,13 @@ public class Human {
 	private int shoot;
 	private final int shootMax=30;
 
-	Human(String file){
+	Human(String file,int x,int y){
 		try {
 			img = ImageIO.read(new File(file));
 		} catch (Exception e) {
 			System.out.println("error Picture");
 		}
-		xy=new Point(-100,-100);
+		xy=new Point(x,y);
 		life=3;
 		bomb=3;
 		show=false;
