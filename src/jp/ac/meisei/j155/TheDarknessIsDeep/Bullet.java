@@ -2,9 +2,8 @@ package jp.ac.meisei.j155.TheDarknessIsDeep;
 
 import java.awt.*;
 
-public class Bullet extends Human{
+public class Bullet{
 	Bullet(){
-
 	}
 	private int x,y,vx,vy;
 //プレーヤー弾　直線　弾=丸　一時的
@@ -12,5 +11,4 @@ public class Bullet extends Human{
 		g.setColor(Color.RED);
 		g.fillOval(x, y, 5, 5);
 	}
-	//aa
 }
