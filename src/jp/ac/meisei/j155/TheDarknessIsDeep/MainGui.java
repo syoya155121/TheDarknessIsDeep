@@ -33,7 +33,6 @@ public class MainGui extends JFrame {
 			option.setVisible(false);
 			result.setVisible(false);
 			theEnd.setVisible(false);
-			System.out.println("Title");
 			break;
 		case Option:
 			title.setVisible(false);
@@ -41,7 +40,6 @@ public class MainGui extends JFrame {
 			option.setVisible(true);
 			result.setVisible(false);
 			theEnd.setVisible(false);
-			System.out.println("Option");
 			break;
 		case Game:
 			title.setVisible(false);
