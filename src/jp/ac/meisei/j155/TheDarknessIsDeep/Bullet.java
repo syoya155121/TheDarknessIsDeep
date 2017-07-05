@@ -15,3 +15,4 @@ public class Bullet{
 		bullet[2] = new Human(".pic/bullet3.png",800,400);//敵弾2
 	}
 }
+
