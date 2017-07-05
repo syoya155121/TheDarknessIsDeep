@@ -23,7 +23,6 @@ public class KeyInput {
 				x -= 5;
 				break;
 			case KeyEvent.VK_SPACE:
-
 				break;
 			default:
 				break;
