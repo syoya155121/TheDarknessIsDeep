@@ -86,6 +86,6 @@ public class GuiGame extends JPanel{
 		while(loopGame());
 	}
 	private boolean loopGame(){
-		return true;
+		return false;
 	}
 }
