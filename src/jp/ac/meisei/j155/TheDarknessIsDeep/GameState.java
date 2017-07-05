@@ -62,6 +62,7 @@ public class GameState {
 	private static boolean kbdTOMus = false;
 
 	GameState(){
+		debug.println("aaa");
 		States state = States.Title;
 		score=0;
 	}
