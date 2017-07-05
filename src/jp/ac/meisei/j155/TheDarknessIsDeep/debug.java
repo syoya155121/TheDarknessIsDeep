@@ -9,4 +9,5 @@ public class debug {
 	public static void print(String s){
 		if(flag) System.out.print(s);
 	}
+
 }
