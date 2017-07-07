@@ -22,3 +22,4 @@
 ### 参考URL  
 + GUI http://nowloading.blog.jp/archives/36741210.html  
 + いろいろ http://www.sist.ac.jp/~suganuma/game/Java/  
++ gui http://aidiary.hatenablog.com/entry/20040919/1251377847  
