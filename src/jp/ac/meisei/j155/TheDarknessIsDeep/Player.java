@@ -12,9 +12,4 @@ public class Player extends Human{
 	Player(String file, int x, int y) {
 		super(".pic/player.png",100,300);
 	}
-	private int bulletType;
-	private int fra;
-	void draw(){
-
-	}
 }
