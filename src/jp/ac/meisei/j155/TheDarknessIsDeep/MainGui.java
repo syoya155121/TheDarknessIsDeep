@@ -1,4 +1,6 @@
 package jp.ac.meisei.j155.TheDarknessIsDeep;
+import java.awt.Dimension;
+
 import javax.swing.JFrame;
 
 import jp.ac.meisei.j155.TheDarknessIsDeep.GameState.States;
@@ -12,7 +14,7 @@ public class MainGui extends JFrame {
 	static GuiTheEnd theEnd = new GuiTheEnd();
 
 	public MainGui() {
-		this.setBounds(0,0,1000,750);
+		this.setBounds(100,100,1000,770);
 		this.setResizable(false);
 		getContentPane().add(title);
 		getContentPane().add(game);
@@ -24,6 +26,8 @@ public class MainGui extends JFrame {
 		option.setVisible(false);
 		result.setVisible(false);
 		theEnd.setVisible(false);
+		getContentPane().setPreferredSize(new Dimension(1000, 750));
+	    pack();
 	}
 	static public void changePanel(States state){
 		switch(state){
