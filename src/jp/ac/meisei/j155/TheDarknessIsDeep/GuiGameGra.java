@@ -14,4 +14,6 @@ public class GuiGameGra extends JPanel{
 		setBackground(new Color(0, 0, 153));
 		setVisible(true);;
 	}
+	
+	
 }
