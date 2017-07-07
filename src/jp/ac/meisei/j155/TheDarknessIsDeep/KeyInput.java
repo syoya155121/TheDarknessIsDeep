@@ -3,7 +3,7 @@ package jp.ac.meisei.j155.TheDarknessIsDeep;
 import java.awt.event.KeyEvent;
 
 public class KeyInput {
-	int x,  y;
+	int vx,  vy;
 
 	//キー入力処理　移動:矢印キー　撃つ:スペース　
 	public void processKeyEvent(KeyEvent e){
@@ -11,16 +11,16 @@ public class KeyInput {
 
 			switch(e.getKeyCode()){
 			case KeyEvent.VK_UP:
-				y -= 5;
+				vy -= 5;
 				break;
 			case KeyEvent.VK_DOWN:
-				y += 5;
+				vy += 5;
 				break;
 			case KeyEvent.VK_RIGHT:
-				x += 5;
+				vx += 5;
 				break;
 			case KeyEvent.VK_LEFT:
-				x -= 5;
+				vx -= 5;
 				break;
 			case KeyEvent.VK_SPACE:
 				break;

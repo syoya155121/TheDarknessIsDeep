@@ -8,12 +8,18 @@ import javax.imageio.ImageIO;
 import java.awt.event.KeyEvent;
 import java.io.File;
 
-public class Player{
+public class Player extends KeyInput{
 	private int bulletType;
 	private int fra;
-	Human player;
+	Image img;
 
-	void player() {
-		player = new Human(".pic/player.png",100,300);
+	void init() {		
+		try {
+			img = ImageIO.read(new File(".pic/player.png"));
+		} catch (Exception e) {
+		}
+	}
+	public void paintComponent(Graphics g){
+		g.drawImage(img, 50+vx, 300+vy,null);
 	}
 }
