@@ -10,7 +10,6 @@ import java.io.File;
 
 public class Player extends Human{
 	Player(String file, int x, int y) {
-		super(".pic/player.png",100,300);
+		super("./pic/player.png",x,y);
 	}
 }
-
