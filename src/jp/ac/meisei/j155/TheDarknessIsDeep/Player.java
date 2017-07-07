@@ -13,3 +13,4 @@ public class Player extends Human{
 		super(".pic/player.png",100,300);
 	}
 }
+

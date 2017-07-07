@@ -73,6 +73,7 @@ public class Human {
 		g.drawImage(img, x, y,null);
 	}
 	
+	
 }
 
 //test
