@@ -1,9 +1,9 @@
 package jp.ac.meisei.j155.TheDarknessIsDeep;
 
-public class enemy implements Runnable{
+public class Enemy implements Runnable{
 	Human[] enemy = new Human[5];
 
-	enemy(){
+	Enemy(){
 		enemy[0] = new Human(".pic/enemy1.png",800,800);
 		enemy[1] = new Human(".pic/enemy1.png",800,800);
 		enemy[2] = new Human(".pic/enemy1.png",800,800);
