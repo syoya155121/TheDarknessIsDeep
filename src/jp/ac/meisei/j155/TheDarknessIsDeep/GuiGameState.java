@@ -19,13 +19,10 @@ import javax.swing.SwingConstants;
 
 import jp.ac.meisei.j155.TheDarknessIsDeep.GameState.States;
 
-public class GuiGame extends JLayeredPane{
+public class GuiGameState extends JLayeredPane{
 	JLabel score,scoreNum,life,lifeNum,bomb,bombNum,debug;
-	JLabel p;
-	Player player;
-	Graphics g;
 
-	GuiGame(){
+	GuiGameState(){
 		this.setName("Game");
 		this.setLayout(null);
 		this.setSize(1000,750);
@@ -39,12 +36,8 @@ public class GuiGame extends JLayeredPane{
 		gs.setVisible(true);
 		this.add(gs);
 
-		JPanel gp = new JPanel();
-		gp.setBounds(0,0,1000,700);
-		gp.setLayout(null);
-		gp.setBackground(new Color(0, 0, 153));
-		gp.setVisible(true);
-		this.add(gp);
+		GuiGameGra ggg = new GuiGameGra();
+		this.add(ggg);
 
 		score = new JLabel("score :");
 		score.setBounds(50, 10, 88, 31);
@@ -108,15 +101,5 @@ public class GuiGame extends JLayeredPane{
 
 
 
-	}
-	public void paintComponent(Graphics g){
-		Graphics2D g2 = (Graphics2D)g;
-
-		g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING,RenderingHints.VALUE_ANTIALIAS_ON);
-		g2.draw(new Line2D.Double(30.0d, 50.0d, 180.0d, 140.0d));
-		g2.setPaint(Color.PINK);
-		BasicStroke wideStroke = new BasicStroke(4.0f);
-		g2.setStroke(wideStroke);
-		g2.draw(new Line2D.Double(30.0d, 120.0d, 250.0d, 70.0d));
 	}
 }

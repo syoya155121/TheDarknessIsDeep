@@ -8,7 +8,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
 public class Human {
-	private Point xy;
+	private int x,y;
 	private Point Vxy;
 	private int life;
 	private int bomb;
@@ -24,7 +24,8 @@ public class Human {
 		} catch (Exception e) {
 			System.out.println("error Picture");
 		}
-		xy=new Point(x,y);
+		this.x=x;
+		this.y=y;
 		life=3;
 		bomb=3;
 		show=false;
