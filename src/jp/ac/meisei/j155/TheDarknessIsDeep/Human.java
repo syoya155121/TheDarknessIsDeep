@@ -1,5 +1,6 @@
 package jp.ac.meisei.j155.TheDarknessIsDeep;
 
+import java.awt.Graphics;
 import java.awt.Image;
 import java.io.File;
 
@@ -12,15 +13,14 @@ public class Human {
 	private Point Vxy;
 	private int life;
 	private int bomb;
-	private JLabel img;
+	private Image img;
 	private boolean show;
 	private int shoot;
 	private final int shootMax=30;
 
 	Human(String file,int x,int y){
 		try {
-			ImageIcon icon = new ImageIcon(file);
-			img = new JLabel(icon);
+			img = ImageIO.read(new File(file));
 		} catch (Exception e) {
 			System.out.println("error Picture");
 		}
@@ -32,7 +32,7 @@ public class Human {
 
 	}
 	//img系
-	public JLabel getImg(){
+	public Image getImg(){
 		return img;
 	}
 
@@ -68,6 +68,11 @@ public class Human {
 	public void HiddenShow(){
 		show=false;
 	}
+	
+	private void paintComponent(Graphics g){
+		g.drawImage(img, x, y,null);
+	}
+	
 }
 
 //test
