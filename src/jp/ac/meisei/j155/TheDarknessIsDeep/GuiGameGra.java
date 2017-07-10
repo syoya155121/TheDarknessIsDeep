@@ -16,11 +16,10 @@ public class GuiGameGra extends JPanel{
 		setBackground(new Color(0, 0, 153));
 		setVisible(true);
 		player=new Player();
-
 	}
 
 	public void paint(Graphics g){
-		//player.drow();
+		g.setColor(new Color(0,0,192));
 
 	}
 	public void update(Graphics g){
