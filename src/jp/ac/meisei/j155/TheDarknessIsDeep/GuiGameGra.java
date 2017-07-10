@@ -15,7 +15,7 @@ public class GuiGameGra extends JPanel{
 		setLayout(null);
 		setBackground(new Color(0, 0, 153));
 		setVisible(true);
-		player=new Player();
+		player=new Player(".pic/player.png", 50, 300);
 	}
 
 	public void paint(Graphics g){
