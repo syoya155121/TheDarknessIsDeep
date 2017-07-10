@@ -17,6 +17,7 @@ public class Human {
 	private boolean show;
 	private int shoot;
 	private final int shootMax=30;
+	private final int v = 5;
 
 	Human(String file,int x,int y){
 		try {
@@ -31,6 +32,20 @@ public class Human {
 		show=false;
 
 	}
+	//移動系
+	public void Left(){
+		x-=v;
+	}
+	public void Right(){
+		x+=v;
+	}
+	public void Up(){
+		y-=v;
+	}
+	public void Down(){
+		y+=v;
+	}
+
 	//img系
 	public Image getImg(){
 		return img;
@@ -68,12 +83,12 @@ public class Human {
 	public void HiddenShow(){
 		show=false;
 	}
-	
-	private void paintComponent(Graphics g){
+
+	public void paintImg(Graphics g){
 		g.drawImage(img, x, y,null);
 	}
-	
-	
+
+
 }
 
 //test
