@@ -21,6 +21,7 @@ public class GuiGameGra extends JPanel{
 		t = new GameThread();
 		t.start();
 	}
+	
 	public void Run(){
 		while(true){
 			player.Up();
