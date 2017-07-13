@@ -1,7 +1,4 @@
 # メモ  
-+ 掲示板がわり  
-    + 返信はこんな感じで
-  
 ### GUI系  
 + @syoya 画面推移させる  
     + @syoya title <-> option <-> Game ok  
@@ -23,3 +20,4 @@
 + GUI http://nowloading.blog.jp/archives/36741210.html  
 + いろいろ http://www.sist.ac.jp/~suganuma/game/Java/  
 + gui http://aidiary.hatenablog.com/entry/20040919/1251377847  
++ いろいろ http://qiita.com/koukisayou/items/3ba742548cb0f4c84eaa  
