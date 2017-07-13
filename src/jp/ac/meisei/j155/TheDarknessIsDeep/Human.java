@@ -10,7 +10,7 @@ import javax.swing.JLabel;
 
 public class Human {
 	private int x,y;
-	private Point Vxy;
+	private int Vxy;
 	private int life;
 	private int bomb;
 	private Image img;
@@ -31,6 +31,12 @@ public class Human {
 		bomb=3;
 		show=false;
 
+	}
+	public int getX(){
+		return x;
+	}
+	public int getY(){
+		return y;
 	}
 	//移動系
 	public void Left(){
