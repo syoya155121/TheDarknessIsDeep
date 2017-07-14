@@ -9,8 +9,8 @@ import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
 public class Human {
-	private int x,y;
-	private int Vxy;
+	int x,y;	//privateを消した
+	int vx,vy;
 	private int life;
 	private int bomb;
 	private Image img;
