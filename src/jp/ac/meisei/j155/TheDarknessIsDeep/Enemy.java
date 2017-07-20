@@ -29,7 +29,7 @@ public class Enemy implements Runnable{
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
-			System.out.println("エマージェンシー！！");
+			//System.out.println("エマージェンシー！！");
 		}
 	}
 }
