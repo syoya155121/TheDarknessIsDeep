@@ -40,32 +40,28 @@ public class GuiGameGra extends JPanel implements Runnable{
 
 		TheDarknessIsDeep.f.addKeyListener(new KeyListener(){
 			@Override
-			public void keyTyped(KeyEvent e){}
-			@Override
-			public void keyPressed(KeyEvent e) {
-				//debug.println("Pressed " + e.getKeyChar());
-				if(e.getID() == KeyEvent.KEY_PRESSED){
-					switch(e.getKeyChar()){
-					case 'w': player.Up(); break;
-					case 's': player.Down(); break;
-					case 'd': player.Right(); break;
-					case 'a': player.Left(); break;
-					case ' ':
-						debug.println("Space!!");
-						break;
-					case 'e':
-						player.x=400;
-						player.y=400;
-					default: break;
-					}
+			public void keyTyped(KeyEvent e){
+				debug.println("x: " + player.x+" y: "+player.y);
+				switch(e.getKeyChar()){
+				case 'w': player.y-=1; break;
+				case 's': player.y+=1; break;
+				case 'd': player.x+=1; break;
+				case 'a': player.x-=1; break;
+				case ' ':
+					debug.println("Space!!");
+					break;
+				case 'e':
+					player.x=400;
+					player.y=400;
+				default: break;
 				}
 			}
-
 			@Override
-			public void keyReleased(KeyEvent e) {
-				// TODO 自動生成されたメソッド・スタブ
+			public void keyPressed(KeyEvent e) {
 
 			}
+			@Override
+			public void keyReleased(KeyEvent e) {}
 		});
 
 
