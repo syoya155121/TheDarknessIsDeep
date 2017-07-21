@@ -18,7 +18,7 @@ public class TheDarknessIsDeep {
 
 			@Override
 			public void keyPressed(KeyEvent e) {
-				debug.println("Pressed " + e.getKeyChar());
+				//debug.println("Pressed " + e.getKeyChar());
 				if(e.getID() == KeyEvent.KEY_PRESSED){
 					switch(e.getKeyChar()){
 					case 'w':

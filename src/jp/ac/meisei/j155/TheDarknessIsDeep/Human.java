@@ -9,15 +9,16 @@ import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
 public class Human {
-	int x,y;	//privateを消した
+	int x,y;
 	int vx,vy;
+	int hitX,hitY;
 	private int life;
 	private int bomb;
 	private Image img;
 	private boolean show;
 	private int shoot;
 	private final int shootMax=30;
-	private final int v = 10;
+	private final int v = 15;
 
 	Human(String file,int x,int y){
 		try {
@@ -27,6 +28,8 @@ public class Human {
 		}
 		this.x=x;
 		this.y=y;
+		this.hitX=x/2;
+		this.hitY=y/2;
 		life=3;
 		bomb=3;
 		show=false;

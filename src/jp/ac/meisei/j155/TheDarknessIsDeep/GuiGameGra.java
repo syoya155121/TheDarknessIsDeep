@@ -34,7 +34,7 @@ public class GuiGameGra extends JPanel implements Runnable{
 		TheDarknessIsDeep.p.paintImg(g);
 		repaint();
 		try {
-			Thread.sleep(20);
+			Thread.sleep(1);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
