@@ -8,6 +8,10 @@ public class Boss extends Human{
 	}
 
 	public void moveBoss(int time,Graphics g){
+		//FIXME
+		System.out.println("BOSS");
+		
+		
 		this.paintImg(g);
 	}
 }
