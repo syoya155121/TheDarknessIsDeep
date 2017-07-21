@@ -12,6 +12,7 @@ public class Boss extends Human{
 		System.out.println("BOSS");
 		
 		
+		
 		this.paintImg(g);
 	}
 }

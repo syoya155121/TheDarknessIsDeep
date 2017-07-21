@@ -72,7 +72,7 @@ public class GuiGameGra extends JPanel implements Runnable{
 		time++;
 		repaint();
 		try {
-			Thread.sleep(33);
+			Thread.sleep(16);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
