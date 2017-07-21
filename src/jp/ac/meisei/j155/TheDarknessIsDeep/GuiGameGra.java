@@ -11,10 +11,10 @@ import javax.swing.JPanel;
 public class GuiGameGra extends JPanel implements Runnable{
 	Graphics g;
 	//static Player player;
-	Enemy[] enemy = new Enemy[5];
+	//Enemy[] enemy = new Enemy[5];
 	Thread t;
-	int vx=4,vy=4;
 	Enemy et;
+	int time=0;
 
 	GuiGameGra(){
 		setBounds(0,0,1000,700);
@@ -31,10 +31,56 @@ public class GuiGameGra extends JPanel implements Runnable{
 	public void paint(Graphics g){
 		g.setColor(Color.BLACK);
 		g.fillRect(0, 0, 1000,700);
+		g.setColor(Color.white);
+		g.drawString(String.valueOf(time), 50, 50);
 		TheDarknessIsDeep.p.paintImg(g);
+		time++;
 		repaint();
+
+		TheDarknessIsDeep.f.addKeyListener(new KeyListener(){
+			@Override
+			public void keyTyped(KeyEvent e) {
+
+			}
+
+			@Override
+			public void keyPressed(KeyEvent e) {
+				//debug.println("Pressed " + e.getKeyChar());
+				if(e.getID() == KeyEvent.KEY_PRESSED){
+					switch(e.getKeyChar()){
+					case 'w':
+						TheDarknessIsDeep.p.Up();
+						break;
+					case 's':
+						TheDarknessIsDeep.p.Down();
+						break;
+					case 'd':
+						TheDarknessIsDeep.p.Right();
+						break;
+					case 'a':
+						TheDarknessIsDeep.p.Left();
+						break;
+					case ' ':
+						debug.println("Space!!");
+						break;
+					case 'e':
+						TheDarknessIsDeep.p.x=400;
+						TheDarknessIsDeep.p.y=400;
+					default:
+						break;
+					}
+				}
+			}
+
+			@Override
+			public void keyReleased(KeyEvent e) {
+				// TODO 自動生成されたメソッド・スタブ
+
+			}
+		});
+
 		try {
-			Thread.sleep(1);
+			Thread.sleep(33);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
@@ -50,7 +96,7 @@ public class GuiGameGra extends JPanel implements Runnable{
 	public void run() {
 		while(true){
 			try {
-				Thread.sleep(20);
+				Thread.sleep(1);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}

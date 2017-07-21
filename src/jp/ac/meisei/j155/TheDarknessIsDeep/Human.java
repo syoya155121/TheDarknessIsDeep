@@ -18,7 +18,7 @@ public class Human {
 	private boolean show;
 	private int shoot;
 	private final int shootMax=30;
-	private final int v = 15;
+	private final int v = 1;
 
 	Human(String file,int x,int y){
 		try {

@@ -10,11 +10,11 @@ public class Enemy implements Runnable{
 	Graphics g;
 
 	public Enemy(){
-		enemy[0] = new Human(".pic/enemy1.png",800,100);
-		enemy[1] = new Human(".pic/enemy1.png",800,200);
-		enemy[2] = new Human(".pic/enemy1.png",800,300);
-		enemy[3] = new Human(".pic/enemy1.png",800,400);
-		enemy[4] = new Human(".pic/enemy1.png",800,500);
+//		enemy[0] = new Human(".pic/enemy1.png",800,100);
+//		enemy[1] = new Human(".pic/enemy1.png",800,200);
+//		enemy[2] = new Human(".pic/enemy1.png",800,300);
+//		enemy[3] = new Human(".pic/enemy1.png",800,400);
+//		enemy[4] = new Human(".pic/enemy1.png",800,500);
 	}
 	public void paint(Graphics g){
 		for(int i=0;i<5;i++){
