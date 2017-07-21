@@ -35,43 +35,28 @@ public class GuiGameGra extends JPanel implements Runnable{
 		g.fillRect(0, 0, 1000,700);
 		g.setColor(Color.white);
 		g.drawString(String.valueOf(time), 50, 50);
-		player.paintImg(g);
-		boss.paintImg(g);
-
-		time++;
-		repaint();
+		player.movePlayer(time,g);
+		boss.moveBoss(time,g);
 
 		TheDarknessIsDeep.f.addKeyListener(new KeyListener(){
 			@Override
-			public void keyTyped(KeyEvent e) {
-
-			}
-
+			public void keyTyped(KeyEvent e){}
 			@Override
 			public void keyPressed(KeyEvent e) {
 				//debug.println("Pressed " + e.getKeyChar());
 				if(e.getID() == KeyEvent.KEY_PRESSED){
 					switch(e.getKeyChar()){
-					case 'w':
-						player.Up();
-						break;
-					case 's':
-						player.Down();
-						break;
-					case 'd':
-						player.Right();
-						break;
-					case 'a':
-						player.Left();
-						break;
+					case 'w': player.Up(); break;
+					case 's': player.Down(); break;
+					case 'd': player.Right(); break;
+					case 'a': player.Left(); break;
 					case ' ':
 						debug.println("Space!!");
 						break;
 					case 'e':
 						player.x=400;
 						player.y=400;
-					default:
-						break;
+					default: break;
 					}
 				}
 			}
@@ -83,6 +68,9 @@ public class GuiGameGra extends JPanel implements Runnable{
 			}
 		});
 
+
+		time++;
+		repaint();
 		try {
 			Thread.sleep(33);
 		} catch (InterruptedException e) {
