@@ -32,15 +32,6 @@ public class GuiGameGra extends JPanel implements Runnable{
 		g.setColor(Color.BLACK);
 		g.fillRect(0, 0, 1000,700);
 		TheDarknessIsDeep.p.paintImg(g);
-		//変更箇所
-		int x = TheDarknessIsDeep.p.getX();
-		int y = TheDarknessIsDeep.p.getY();
-//		x+=vx;
-//		y+=vy;
-//		TheDarknessIsDeep.p.x=x;
-//		TheDarknessIsDeep.p.y=y;
-
-		debug.println("1 Player x: "+TheDarknessIsDeep.p.getX()+" y: "+TheDarknessIsDeep.p.getY());
 		repaint();
 		try {
 			Thread.sleep(20);

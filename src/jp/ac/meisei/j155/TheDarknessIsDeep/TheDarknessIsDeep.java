@@ -17,10 +17,7 @@ public class TheDarknessIsDeep {
 			public void keyTyped(KeyEvent e) {}
 
 			@Override
-			public void keyPressed(KeyEvent e) {}
-
-			@Override
-			public void keyReleased(KeyEvent e) {
+			public void keyPressed(KeyEvent e) {
 				debug.println("Pressed " + e.getKeyChar());
 				if(e.getID() == KeyEvent.KEY_PRESSED){
 					switch(e.getKeyChar()){
@@ -43,6 +40,11 @@ public class TheDarknessIsDeep {
 						break;
 					}
 				}
+			}
+
+			@Override
+			public void keyReleased(KeyEvent e) {
+
 			}
 
 		});
