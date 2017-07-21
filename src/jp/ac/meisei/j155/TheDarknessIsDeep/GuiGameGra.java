@@ -10,7 +10,8 @@ import javax.swing.JPanel;
 
 public class GuiGameGra extends JPanel implements Runnable{
 	Graphics g;
-	//static Player player;
+	Player player;
+	Boss boss;
 	//Enemy[] enemy = new Enemy[5];
 	Thread t;
 	Enemy et;
@@ -21,9 +22,10 @@ public class GuiGameGra extends JPanel implements Runnable{
 		setLayout(null);
 		setBackground(new Color(0, 0, 153));
 		setVisible(true);
-		//player=new Player(".pic/player.png", 50, 300);
+		player=new Player(".pic/player.png", 50, 300);
+		boss=new Boss(".pic/boss.png", 700, 300);
 		enableEvents(java.awt.AWTEvent.KEY_EVENT_MASK);
-		debug.println("0 Player x: "+TheDarknessIsDeep.p.getX()+" y: "+TheDarknessIsDeep.p.getY());
+		debug.println("0 Player x: "+player.getX()+" y: "+player.getY());
 		et = new Enemy();
 		t = new Thread(et);
 		t.start();
@@ -33,7 +35,9 @@ public class GuiGameGra extends JPanel implements Runnable{
 		g.fillRect(0, 0, 1000,700);
 		g.setColor(Color.white);
 		g.drawString(String.valueOf(time), 50, 50);
-		TheDarknessIsDeep.p.paintImg(g);
+		player.paintImg(g);
+		boss.paintImg(g);
+
 		time++;
 		repaint();
 
@@ -49,23 +53,23 @@ public class GuiGameGra extends JPanel implements Runnable{
 				if(e.getID() == KeyEvent.KEY_PRESSED){
 					switch(e.getKeyChar()){
 					case 'w':
-						TheDarknessIsDeep.p.Up();
+						player.Up();
 						break;
 					case 's':
-						TheDarknessIsDeep.p.Down();
+						player.Down();
 						break;
 					case 'd':
-						TheDarknessIsDeep.p.Right();
+						player.Right();
 						break;
 					case 'a':
-						TheDarknessIsDeep.p.Left();
+						player.Left();
 						break;
 					case ' ':
 						debug.println("Space!!");
 						break;
 					case 'e':
-						TheDarknessIsDeep.p.x=400;
-						TheDarknessIsDeep.p.y=400;
+						player.x=400;
+						player.y=400;
 					default:
 						break;
 					}
@@ -88,7 +92,7 @@ public class GuiGameGra extends JPanel implements Runnable{
 	}
 
 	public void update(Graphics g){
-		debug.println("2 Player x: "+TheDarknessIsDeep.p.getX()+" y: "+TheDarknessIsDeep.p.getY());
+		debug.println("2 Player x: "+player.getX()+" y: "+player.getY());
 		paint(g);
 	}
 
