@@ -12,6 +12,7 @@ public class GuiGameGra extends JPanel implements Runnable{
 	Player player;
 	Boss boss;
 	//Enemy[] enemy = new Enemy[5];
+	int time=0;
 	Thread t;
 
 	GuiGameGra(){
