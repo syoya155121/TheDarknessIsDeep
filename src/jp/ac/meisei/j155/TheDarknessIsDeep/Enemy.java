@@ -1,28 +1,23 @@
 package jp.ac.meisei.j155.TheDarknessIsDeep;
 
-public class Enemy implements Runnable{
-	Human[] enemy = new Human[5];
-
-	Enemy(){
-		enemy[0] = new Human(".pic/enemy1.png",800,800);
-		enemy[1] = new Human(".pic/enemy1.png",800,800);
-		enemy[2] = new Human(".pic/enemy1.png",800,800);
-		enemy[3] = new Human(".pic/enemy1.png",800,800);
-		enemy[4] = new Human(".pic/enemy1.png",800,800);
+public class Enemy extends Human implements Runnable{
+	// アニメーション用スレッド
+	private Thread thread;
+	private int vx=0;
+	private int vy=3;
+	Enemy(String file, int x, int y) {
+		super("./pic/enemy1.png",x,y);
 	}
 
 	public void run(){
-		/*while(){
-			enemy[0];
-			Thread.sleep(1000);
-			enemy[1];
-			Thread.sleep(1000);
-			enemy[2];
-			Thread.sleep(1000);
-			enemy[3];
-			Thread.sleep(1000);
-			enemy[4];
-			Thread.sleep(1000);
-		}*/
+		// プログラムが終了するまでフレーム処理を繰り返す
+		while (true) {
+			// 20ミリ秒だけ休止
+			try {
+				Thread.sleep(20);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		}
 	}
 }

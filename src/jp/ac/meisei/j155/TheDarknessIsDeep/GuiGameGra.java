@@ -12,6 +12,7 @@ public class GuiGameGra extends JPanel implements KeyListener,Runnable{
 	Player player;
 	Enemy[] enemy = new Enemy[5];
 	Thread t;
+	int x=800,y=100,vx,vy=3;
 
 	GuiGameGra(){
 		setBounds(0,0,1000,700);
@@ -19,12 +20,14 @@ public class GuiGameGra extends JPanel implements KeyListener,Runnable{
 		setBackground(new Color(0, 0, 153));
 		setVisible(true);
 		player=new Player(".pic/player.png", 50, 300);
+		enemy[0] = new Enemy("./pic/enemy1.png",x,y);
 		enableEvents(java.awt.AWTEvent.KEY_EVENT_MASK);
 		debug.println("0 Player x: "+player.getX()+" y: "+player.getY());
 		addKeyListener(this);
 		t = new Thread();
 		t.start();
 	}
+
 	public void paint(Graphics g){
 		g.setColor(Color.BLACK);
 		g.fillRect(0, 0, 1000,700);
@@ -53,11 +56,12 @@ public class GuiGameGra extends JPanel implements KeyListener,Runnable{
 		// TODO 自動生成されたメソッド・スタブ
 		debug.println("4 Player x: "+player.getX()+" y: "+player.getY());
 	}
-
+	
 	@Override
 	public void run() {
 		while(true){
 			debug.println("9 Player x: "+player.getX()+" y: "+player.getY());
+			y += vy;
 			repaint();
 
 			try {
