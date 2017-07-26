@@ -6,9 +6,9 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.util.Vector;
 
-import jp.ac.meisei.j155.TheDarknessIsDeep.GameState.States;
-
 import javax.swing.JPanel;
+
+import jp.ac.meisei.j155.TheDarknessIsDeep.GameState.States;
 
 public class GuiGameGra extends JPanel implements Runnable{
 	Graphics g;
@@ -22,7 +22,6 @@ public class GuiGameGra extends JPanel implements Runnable{
 	int cnt2=0;
 	int cnt3=0;
 	int tmp;
-	boolean l,r,u,d;
 
 	Vector<Bullet> playerBullets = new Vector<Bullet>();
 	static int flag=0;
@@ -58,9 +57,16 @@ public class GuiGameGra extends JPanel implements Runnable{
 			b.moveBullet(time,g);
 			if(boss.x-b.x<20 && boss.x-b.x>-70 && boss.y-b.y<20 && boss.y-b.y>-25){
 				hit++;
-				//	boss.life--;	ライフ減らす
+				boss.subLife();
 			}
-			//if(boss.life<=0){}　　ボスライフ0用
+
+			if(boss.getLife()<=0){
+				flag=2;
+				GuiResult.vUpdate();
+				GameState.setState(States.Result);
+				MainGui.changePanel(GameState.getState());
+			}
+
 			if(hit>0||b.x>1000){
 				playerBullets.remove(i);
 			}else{
@@ -73,18 +79,23 @@ public class GuiGameGra extends JPanel implements Runnable{
 				cnt++;
 				if(cnt%(1+cnt2+cnt2%10)==0){
 					cnt=0;
-					switch(e.getKeyCode()){
-					case 'w': player.y-=4; break;
-					case 's': player.y+=4; break;
-					case 'd': player.x+=4; break;
-					case 'a': player.x-=4; break;
+					switch(e.getKeyChar()){
+					case 'w': player.y-=5; break;
+					case 's': player.y+=5; break;
+					case 'd': player.x+=5; break;
+					case 'a': player.x-=5; break;
+					case 'q': player.x-=5; player.y-=5; break;
+					case 'e': player.x+=5; player.y-=5; break;
+					case 'c': player.x+=5; player.y+=5; break;
+					case 'z': player.x-=5; player.y+=5; break;
 					case ' ':
 						if(cnt3==0){
-							playerBullets.add(new Bullet(".pic/bullet1.png",player.x,player.y));
+							playerBullets.add(new Bullet(".pic/bullet1.png",player.x+90,player.y+20));
 							cnt3++;
 						}
 						break;
-					case 'e':
+
+					case 'l':
 						player.x=400;
 						player.y=400;
 					default: break;
