@@ -21,16 +21,16 @@ public class Boss extends Human{
 	public void moveBoss(int time,Graphics g){
 		//FIXME
 		System.out.println("BOSS");
-		if(time < 200){
+		if(time < 300){
 			movepettern1();
 			System.out.println(count);
 		}
-		if(200 <= time && time <= 400){
+		if(300 <= time && time <= 500){
 			ReturnInitPos();
 			System.out.println(sbx);
 			System.out.println(sbx);
 		}
-		if(400<time && time <100){
+		if(500<time){
 			movepettern2();
 			System.out.println(mbx);
 			System.out.println(mby);
@@ -73,18 +73,18 @@ public class Boss extends Human{
 	
 	public void movepettern2(){
 		{	
-			mbx = player.getX();
-			mby = player.getY();
+			mbx = GuiGameGra.player.x;
+			mby = GuiGameGra.player.y;
 			sbx = mbx - x ;
 			sby = mby - y ;
-			if(mbx < 0){
+			if(sbx < 0){
 				x -= 5;
-			}else if(mbx > 0){
+			}else if(sbx > 0){
 				x += 5;
 			}
-			if(mby < 0){
+			if(sby < 0){
 				y -= 5;
-			}else if(mby > 0){
+			}else if(sby > 0){
 				y += 5;
 			}
 		}
