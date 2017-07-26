@@ -7,12 +7,12 @@ import java.awt.event.KeyListener;
 
 import javax.swing.JPanel;
 
-public class GuiGameGra extends JPanel implements KeyListener,Runnable{
+public class GuiGameGra extends JPanel implements Runnable{
 	Graphics g;
 	Player player;
-	Enemy[] enemy = new Enemy[5];
+	Boss boss;
+	//Enemy[] enemy = new Enemy[5];
 	Thread t;
-	int x=800,y=100,vx,vy=3;
 
 	GuiGameGra(){
 		setBounds(0,0,1000,700);
@@ -20,19 +20,56 @@ public class GuiGameGra extends JPanel implements KeyListener,Runnable{
 		setBackground(new Color(0, 0, 153));
 		setVisible(true);
 		player=new Player(".pic/player.png", 50, 300);
-		enemy[0] = new Enemy("./pic/enemy1.png",x,y);
 		enableEvents(java.awt.AWTEvent.KEY_EVENT_MASK);
 		debug.println("0 Player x: "+player.getX()+" y: "+player.getY());
-		addKeyListener(this);
-		t = new Thread();
+		//et = new Enemy();
+		//t = new Thread(et);
 		t.start();
 	}
 
 	public void paint(Graphics g){
 		g.setColor(Color.BLACK);
 		g.fillRect(0, 0, 1000,700);
-		player.paintImg(g);
-		debug.println("1 Player x: "+player.getX()+" y: "+player.getY());
+		g.setColor(Color.white);
+		g.drawString(String.valueOf(time), 50, 50);
+		player.movePlayer(time,g);
+		boss.moveBoss(time,g);
+
+		TheDarknessIsDeep.f.addKeyListener(new KeyListener(){
+			@Override
+			public void keyTyped(KeyEvent e){
+				debug.println("x: " + player.x+" y: "+player.y);
+				switch(e.getKeyChar()){
+				case 'w': player.y-=1; break;
+				case 's': player.y+=1; break;
+				case 'd': player.x+=1; break;
+				case 'a': player.x-=1; break;
+				case ' ':
+					debug.println("Space!!");
+					break;
+				case 'e':
+					player.x=400;
+					player.y=400;
+				default: break;
+				}
+			}
+			@Override
+			public void keyPressed(KeyEvent e) {
+
+			}
+			@Override
+			public void keyReleased(KeyEvent e) {}
+		});
+
+
+		time++;
+		repaint();
+		try {
+			Thread.sleep(16);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		//描画するための変更
 	}
 
 	public void update(Graphics g){
@@ -41,31 +78,10 @@ public class GuiGameGra extends JPanel implements KeyListener,Runnable{
 	}
 
 	@Override
-	public void keyTyped(KeyEvent e) {
-		// TODO 自動生成されたメソッド・スタブ
-		debug.println("5 Player x: "+player.getX()+" y: "+player.getY());
-	}
-
-	@Override
-	public void keyPressed(KeyEvent e) {
-		debug.println("3 Player x: "+player.getX()+" y: "+player.getY());
-	}
-
-	@Override
-	public void keyReleased(KeyEvent e) {
-		// TODO 自動生成されたメソッド・スタブ
-		debug.println("4 Player x: "+player.getX()+" y: "+player.getY());
-	}
-	
-	@Override
 	public void run() {
 		while(true){
-			debug.println("9 Player x: "+player.getX()+" y: "+player.getY());
-			y += vy;
-			repaint();
-
 			try {
-				Thread.sleep(20);
+				Thread.sleep(1);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}

@@ -1,23 +1,33 @@
 package jp.ac.meisei.j155.TheDarknessIsDeep;
 
-public class Enemy extends Human implements Runnable{
-	// アニメーション用スレッド
-	private Thread thread;
-	private int vx=0;
-	private int vy=3;
-	Enemy(String file, int x, int y) {
-		super("./pic/enemy1.png",x,y);
+
+import java.awt.Graphics;
+
+import jp.ac.meisei.j155.TheDarknessIsDeep.GameState.States;
+
+public class Enemy implements Runnable{
+	private static final States Game = null;
+	Human[] enemy = new Human[5];
+	Graphics g;
+
+	public Enemy(){
+//		enemy[0] = new Human(".pic/enemy1.png",800,100);
+//		enemy[1] = new Human(".pic/enemy1.png",800,200);
+//		enemy[2] = new Human(".pic/enemy1.png",800,300);
+//		enemy[3] = new Human(".pic/enemy1.png",800,400);
+//		enemy[4] = new Human(".pic/enemy1.png",800,500);
 	}
+	public void paint(Graphics g){
+		}
 
 	public void run(){
-		// プログラムが終了するまでフレーム処理を繰り返す
-		while (true) {
-			// 20ミリ秒だけ休止
+		while(GameState.getState() == Game){
 			try {
 				Thread.sleep(20);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
+			//System.out.println("エマージェンシー！！");
 		}
 	}
 }
