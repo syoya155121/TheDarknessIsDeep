@@ -11,19 +11,29 @@ import javax.swing.JPanel;
 import jp.ac.meisei.j155.TheDarknessIsDeep.GameState.States;
 
 public class GuiResult extends JPanel{
-	static JLabel titleLabel;
+	static JLabel titleLabel,time;
 	JLabel end;
 	static String title;
+	static int timenum=0;
 	static void vUpdate(){
+		timenum=GuiGameGra.time/60;
 		if(GuiGameGra.flag==1) title="Game Over";
-		if(GuiGameGra.flag==2) title="Congratulations";
+		if(GuiGameGra.flag==2) title="Congratulations!!!!";
 		titleLabel.setText(title);
+		time.setText("Time :"+timenum);
 	}
 	GuiResult(){
 		setName("Title");
 		setLayout(null);
 		setSize(1000,750);
 		setBackground(new Color(0,0,0));
+
+		time = new JLabel();
+		time.setBounds(400,400,400,100);
+		time.setForeground(new Color(255,255,255));
+		time.setHorizontalAlignment(JLabel.LEFT);
+		time.setFont(new Font("Impact", Font.PLAIN, 60));
+		add(time);
 
 		titleLabel = new JLabel(title);
 		titleLabel.setBounds(0, 50, 1000, 100);
