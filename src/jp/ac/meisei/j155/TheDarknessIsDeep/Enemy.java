@@ -1,5 +1,6 @@
 package jp.ac.meisei.j155.TheDarknessIsDeep;
 
+
 import java.awt.Graphics;
 
 import jp.ac.meisei.j155.TheDarknessIsDeep.GameState.States;
@@ -17,10 +18,7 @@ public class Enemy implements Runnable{
 //		enemy[4] = new Human(".pic/enemy1.png",800,500);
 	}
 	public void paint(Graphics g){
-		for(int i=0;i<5;i++){
-			enemy[i].paintImg(g);
 		}
-	}
 
 	public void run(){
 		while(GameState.getState() == Game){

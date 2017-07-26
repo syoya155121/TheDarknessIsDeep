@@ -5,8 +5,6 @@ import java.awt.Image;
 import java.io.File;
 
 import javax.imageio.ImageIO;
-import javax.swing.ImageIcon;
-import javax.swing.JLabel;
 
 public class Human {
 	int x,y;
