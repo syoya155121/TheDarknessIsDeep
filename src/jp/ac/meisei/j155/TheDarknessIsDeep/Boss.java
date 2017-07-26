@@ -11,7 +11,7 @@ public class Boss extends Human{
 	private int ptny = 3;
 	private int sbx, sby,memx,memy,mbx,mby;
 	Random rnd = new Random();
-    int ran = rnd.nextInt(50);
+	int ran = rnd.nextInt(50);
 	Boss(String file, int x, int y) {
 		super("./pic/boss.png",x,y);
 		sx=x;
@@ -52,7 +52,7 @@ public class Boss extends Human{
 			y += 2;
 		}
 	}
-		
+
 	public void movepettern1(){
 		if(count ==0){
 			ptnx = 5;
@@ -70,9 +70,9 @@ public class Boss extends Human{
 		y += ptny;
 		count += cn;
 	}
-	
+
 	public void movepettern2(){
-		{	
+		{
 			mbx = GuiGameGra.player.x;
 			mby = GuiGameGra.player.y;
 			sbx = mbx - x ;
@@ -92,6 +92,9 @@ public class Boss extends Human{
 	public void init(){
 		this.x=sx;
 		this.y=sy;
+		count =0;
+		ptnx = 0;
+		ptny = 3;
 	}
 }
 
