@@ -12,8 +12,9 @@ public class GuiGameGra extends JPanel implements Runnable{
 	Player player;
 	Boss boss;
 	//Enemy[] enemy = new Enemy[5];
-	int time=0;
 	Thread t;
+	Enemy et;
+	int time=0;
 
 	GuiGameGra(){
 		setBounds(0,0,1000,700);
@@ -21,13 +22,13 @@ public class GuiGameGra extends JPanel implements Runnable{
 		setBackground(new Color(0, 0, 153));
 		setVisible(true);
 		player=new Player(".pic/player.png", 50, 300);
+		boss=new Boss(".pic/boss.png", 700, 300);
 		enableEvents(java.awt.AWTEvent.KEY_EVENT_MASK);
 		debug.println("0 Player x: "+player.getX()+" y: "+player.getY());
-		//et = new Enemy();
-		//t = new Thread(et);
+		et = new Enemy();
+		t = new Thread(et);
 		t.start();
 	}
-
 	public void paint(Graphics g){
 		g.setColor(Color.BLACK);
 		g.fillRect(0, 0, 1000,700);
@@ -89,3 +90,4 @@ public class GuiGameGra extends JPanel implements Runnable{
 		}
 	}
 }
+

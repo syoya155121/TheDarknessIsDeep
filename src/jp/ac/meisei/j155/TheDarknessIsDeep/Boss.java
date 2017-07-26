@@ -9,10 +9,25 @@ public class Boss extends Human{
 
 	public void moveBoss(int time,Graphics g){
 		//FIXME
+		if(time<1000){
+
+		}
 		System.out.println("BOSS");
-		
-		
-		
+
+
+
 		this.paintImg(g);
 	}
+
+	private void movepettern1(){
+		int ptnx = 3;
+		int ptny = 3;
+
+		x+=ptnx;
+		if(x==600){
+
+		}
+
+	}
 }
+
