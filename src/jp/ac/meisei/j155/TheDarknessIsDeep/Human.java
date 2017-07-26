@@ -59,6 +59,12 @@ public class Human {
 	public Image getImg(){
 		return img;
 	}
+	public int getW(){
+		return img.getWidth(null);
+	}
+	public int getH(){
+		return img.getHeight(null);
+	}
 
 	//Life系
 	public int getLife(){

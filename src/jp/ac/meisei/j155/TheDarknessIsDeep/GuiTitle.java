@@ -8,9 +8,11 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import jp.ac.meisei.j155.TheDarknessIsDeep.GameState.States;
+import javax.swing.SwingConstants;
 
 public class GuiTitle extends JPanel {
 	JLabel titleLabel,gamestartLabel,optionLabel,exitLabel;
+	JLabel c;
 
 
 	public GuiTitle(){
@@ -18,6 +20,14 @@ public class GuiTitle extends JPanel {
 		setLayout(null);
 		setSize(1000,750);
 		setBackground(new Color(0,0,0));
+
+		c = new JLabel();
+		c.setHorizontalAlignment(SwingConstants.CENTER);
+		c.setText("<html>操作説明<br>・w,a,s,d = 移動<br>・space = 弾を打つ<br>ルール<br>・とりあえず急いでBossを倒せ！！<html>");
+		c.setBounds(23, 371, 562, 179);
+		c.setForeground(new Color(255,255,255));
+		c.setFont(new Font("Impact", Font.PLAIN, 20));
+		add(c);
 
 		titleLabel = new JLabel("The Darkness is Deep");
 		titleLabel.setBounds(0, 50, 1000, 100);

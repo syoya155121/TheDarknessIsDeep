@@ -17,7 +17,7 @@ public class GuiOption extends JPanel{
 	JLabel title, ope,mouse,keyboard,life,lifeNum,bomb,bombNum,save;
 	MainGui mg;
 
-	JRadioButton kb,ms;
+	//JRadioButton kb,ms;
 
 
 	GuiOption(){
@@ -32,15 +32,15 @@ public class GuiOption extends JPanel{
 		title.setHorizontalAlignment(JLabel.CENTER);
 		title.setFont(new Font("Impact", Font.PLAIN, 80));
 
-		kb = new JRadioButton("");
-		kb.setSelected(true);
-		kb.setBounds(420, 210, 28, 23);
-
-		ms = new JRadioButton("");
-		ms.setBounds(710, 210, 28, 23);
-		ButtonGroup group = new ButtonGroup();
-		group.add(kb);
-		group.add(ms);
+//		kb = new JRadioButton("");
+//		kb.setSelected(true);
+//		kb.setBounds(420, 210, 28, 23);
+//
+//		ms = new JRadioButton("");
+//		ms.setBounds(710, 210, 28, 23);
+//		ButtonGroup group = new ButtonGroup();
+//		group.add(kb);
+//		group.add(ms);
 
 		ope = new JLabel("Oparation");
 		ope.setBounds(50, 185, 272, 65);
@@ -66,7 +66,7 @@ public class GuiOption extends JPanel{
 		life.setHorizontalAlignment(JLabel.CENTER);
 		life.setFont(new Font("Impact", Font.PLAIN, 65));
 
-		lifeNum = new JLabel("99");
+		lifeNum = new JLabel("0");
 		lifeNum.setBounds(600, 350, 76, 57);
 		lifeNum.setForeground(new Color(255,255,255));
 		lifeNum.setHorizontalAlignment(JLabel.CENTER);
@@ -78,7 +78,7 @@ public class GuiOption extends JPanel{
 		bomb.setHorizontalAlignment(JLabel.CENTER);
 		bomb.setFont(new Font("Impact", Font.PLAIN, 65));
 
-		bombNum = new JLabel("99");
+		bombNum = new JLabel("0");
 		bombNum.setBounds(600, 470, 76, 57);
 		bombNum.setForeground(new Color(255,255,255));
 		bombNum.setHorizontalAlignment(JLabel.CENTER);
@@ -109,8 +109,8 @@ public class GuiOption extends JPanel{
 		add(bomb);
 		add(bombNum);
 
-		add(kb);
-		add(ms);
+//		add(kb);
+//		add(ms);
 
 	}
 }
