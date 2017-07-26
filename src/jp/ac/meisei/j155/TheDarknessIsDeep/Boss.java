@@ -16,6 +16,7 @@ public class Boss extends Human{
 		super("./pic/boss.png",x,y);
 		sx=x;
 		sy=y;
+		setLife(10);
 	}
 
 	public void moveBoss(int time,Graphics g){
@@ -95,6 +96,7 @@ public class Boss extends Human{
 		count =0;
 		ptnx = 0;
 		ptny = 3;
+		setLife(10);
 	}
 }
 

@@ -74,6 +74,9 @@ public class Human {
 	public void subLife(){
 		life--;
 	}
+	public void setLife(int n){
+		life=n;
+	}
 
 	//ボム系
 	public int getBomb(){
