@@ -22,6 +22,7 @@ public class GuiGameGra extends JPanel implements Runnable{
 	int cnt2=0;
 	int cnt3=0;
 	int tmp;
+	boolean l,r,u,d;
 
 	Vector<Bullet> playerBullets = new Vector<Bullet>();
 	static int flag=0;
@@ -71,9 +72,8 @@ public class GuiGameGra extends JPanel implements Runnable{
 			public void keyTyped(KeyEvent e){
 				cnt++;
 				if(cnt%(1+cnt2+cnt2%10)==0){
-					//					debug.println("cnt: "+cnt+" x: " + player.x+" y: "+player.y);
 					cnt=0;
-					switch(e.getKeyChar()){
+					switch(e.getKeyCode()){
 					case 'w': player.y-=4; break;
 					case 's': player.y+=4; break;
 					case 'd': player.x+=4; break;
