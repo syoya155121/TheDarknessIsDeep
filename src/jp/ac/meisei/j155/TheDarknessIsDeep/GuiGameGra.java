@@ -6,9 +6,9 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.util.Vector;
 
-import javax.swing.JPanel;
-
 import jp.ac.meisei.j155.TheDarknessIsDeep.GameState.States;
+
+import javax.swing.JPanel;
 
 public class GuiGameGra extends JPanel implements Runnable{
 	Graphics g;
@@ -80,11 +80,10 @@ public class GuiGameGra extends JPanel implements Runnable{
 					case 'a': player.x-=4; break;
 					case ' ':
 						if(cnt3==0){
-							playerBullets.add(new Bullet(".pic/bullet1.png",player.x+90,player.y+20));
+							playerBullets.add(new Bullet(".pic/bullet1.png",player.x,player.y));
 							cnt3++;
 						}
 						break;
-
 					case 'e':
 						player.x=400;
 						player.y=400;
@@ -144,4 +143,3 @@ public class GuiGameGra extends JPanel implements Runnable{
 		}
 	}
 }
-
