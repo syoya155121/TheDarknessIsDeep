@@ -80,10 +80,11 @@ public class GuiGameGra extends JPanel implements Runnable{
 					case 'a': player.x-=4; break;
 					case ' ':
 						if(cnt3==0){
-							playerBullets.add(new Bullet(".pic/bullet1.png",player.x,player.y));
+							playerBullets.add(new Bullet(".pic/bullet1.png",player.x+90,player.y+20));
 							cnt3++;
 						}
 						break;
+
 					case 'e':
 						player.x=400;
 						player.y=400;
