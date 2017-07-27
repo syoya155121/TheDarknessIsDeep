@@ -23,7 +23,7 @@ public class GuiGameGra extends JPanel implements Runnable{
 	int cnt3=0;
 	int tmp;
 
-	Vector<Bullet> playerBullets = new Vector<Bullet>();
+	static Vector<Bullet> playerBullets = new Vector<Bullet>();
 	static int flag=0;
 
 	GuiGameGra(){
@@ -62,6 +62,7 @@ public class GuiGameGra extends JPanel implements Runnable{
 
 			if(boss.getLife()<=0){
 				flag=2;
+				playerBullets.clear();
 				GuiResult.vUpdate();
 				GameState.setState(States.Result);
 				MainGui.changePanel(GameState.getState());
@@ -120,6 +121,7 @@ public class GuiGameGra extends JPanel implements Runnable{
 
 		if(boss.x-player.x<100 && boss.x-player.x>-70 && boss.y-player.y<60 && boss.y-player.y>-30){
 			flag=1;
+			playerBullets.clear();
 			GuiResult.vUpdate();
 			GameState.setState(States.Result);
 			MainGui.changePanel(GameState.getState());

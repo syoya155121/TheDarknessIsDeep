@@ -82,6 +82,7 @@ public class GuiGameState extends JLayeredPane{
 		debug.setFont(new Font("Impact", Font.PLAIN, 30));
 		debug.addMouseListener(new MouseListener(){
 			public void mouseClicked(MouseEvent e) {
+				GuiGameGra.playerBullets.clear();
 				GameState.setState(States.Title);
 				MainGui.changePanel(GameState.getState());
 			}
