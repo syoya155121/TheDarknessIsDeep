@@ -32,10 +32,13 @@ public class Boss extends Human{
 			System.out.println(sbx);
 			System.out.println(sbx);
 		}
-		if(500<time){
+		if(500<time  && time<700){
 			movepettern2();
 			System.out.println(mbx);
 			System.out.println(mby);
+		}
+		if(700<time){
+			ReturnInitPos();
 		}
 		this.paintImg(g);
 	}

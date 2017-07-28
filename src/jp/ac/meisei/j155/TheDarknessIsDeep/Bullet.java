@@ -13,6 +13,10 @@ public class Bullet extends Human{
 		this.paintImg(g);
 		x+=5;
 	}
+	public void moveBullet2(int time,Graphics g){
+		this.paintImg(g);
+		x-=5;
+	}
 	public void init(){
 		this.x=sx;
 		this.y=sy;

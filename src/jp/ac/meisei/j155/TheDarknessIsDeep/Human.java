@@ -20,6 +20,8 @@ public class Human {
 
 	Human(String file,int x,int y){
 		try {
+			//java.net.URL url = getClass().getClassLoader().getResource(file);
+			//img = ImageIO.read(new File(url));
 			img = ImageIO.read(new File(file));
 		} catch (Exception e) {
 			System.out.println("error Picture");
