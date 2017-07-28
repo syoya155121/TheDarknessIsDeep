@@ -22,6 +22,8 @@ public class GuiGameGra extends JPanel implements Runnable{
 	int cnt2=0;
 	int cnt3=0;
 	int tmp=0;
+	
+	int vx,vy;
 
 	static Vector<Bullet> playerBullets = new Vector<Bullet>();
 	static Vector<EBullet> enemyBullets = new Vector<EBullet>();
@@ -29,7 +31,7 @@ public class GuiGameGra extends JPanel implements Runnable{
 
 	static int flag=0;
 
-	
+
 	GuiGameGra(){
 		setBounds(0,0,1000,700);
 		setLayout(null);
@@ -52,6 +54,13 @@ public class GuiGameGra extends JPanel implements Runnable{
 		g.setColor(Color.white);
 		g.drawString(String.valueOf(time), 50, 35);
 		g.drawString("time : "+String.valueOf(time/60), 50, 50);
+
+		player.x  =player.x+=vx;
+		player.y  =player.y+=vy;
+		if(player.x<0) player.x=0;
+		if(player.x>900) player.x=900;
+		if(player.y<0) player.y=0;
+		if(player.y>600) player.y=600;
 		player.movePlayer(time,g);
 		boss.moveBoss(time,g);
 		int i=0;
@@ -151,14 +160,10 @@ public class GuiGameGra extends JPanel implements Runnable{
 				if(cnt%(1+cnt2+cnt2%10)==0){
 					cnt=0;
 					switch(e.getKeyChar()){
-					case 'w': player.y-=2; break;
-					case 's': player.y+=2; break;
-					case 'd': player.x+=2; break;
-					case 'a': player.x-=2; break;
-					case 'q': player.x-=2; player.y-=2; break;
-					case 'e': player.x+=2; player.y-=2; break;
-					case 'c': player.x+=2; player.y+=2; break;
-					case 'z': player.x-=2; player.y+=2; break;
+					case 'w': vy=-5; break;
+					case 's': vy=5; break;
+					case 'd': vx=5; break;
+					case 'a': vx=-5; break;
 					case ' ':
 						if(cnt3==0){
 							playerBullets.add(new Bullet(".pic/bullet1.png",player.x+90,player.y+20));
@@ -171,10 +176,7 @@ public class GuiGameGra extends JPanel implements Runnable{
 						player.y=400;
 					default: break;
 					}
-					if(player.x<0) player.x=0;
-					if(player.x>900) player.x=900;
-					if(player.y<0) player.y=0;
-					if(player.y>600) player.y=600;
+					
 					cnt2++;
 				}
 			}
@@ -183,7 +185,16 @@ public class GuiGameGra extends JPanel implements Runnable{
 
 			}
 			@Override
-			public void keyReleased(KeyEvent e) {}
+			public void keyReleased(KeyEvent e) {
+				switch(e.getKeyChar()){
+				case 'w': vy=0; break;
+				case 's': vy=0; break;
+				case 'd': vx=0; break;
+				case 'a': vx=0; break;
+				case ' ': break;
+
+				}
+			}
 		});
 		debug.println("cnt:"+cnt2+" Boss: "+boss.x+":"+boss.y+" Player: "+player.x+":"+player.y+"  B-P: "+(boss.x-player.x)+":"+(boss.y-player.y)+
 				"  Flag: "+(boss.x-player.x<100 && boss.x-player.x>-70 && boss.y-player.y<60 && boss.y-player.y>-30));
@@ -208,8 +219,8 @@ public class GuiGameGra extends JPanel implements Runnable{
 		//描画するための変更
 
 		//発射間隔用 動くからここに置いた
-		if(0<cnt3&&cnt3<6)cnt3++;
-		if(cnt3==6)cnt3=0;
+		if(0<cnt3&&cnt3<10)cnt3++;
+		if(cnt3==10)cnt3=0;
 	}
 
 	public void update(Graphics g){
