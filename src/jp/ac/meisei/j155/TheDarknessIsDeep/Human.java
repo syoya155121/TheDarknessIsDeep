@@ -15,13 +15,15 @@ public class Human {
 	private Image img;
 	private boolean show;
 	private int shoot;
+	private java.net.URL url;
 	private final int shootMax=30;
 	private final int v = 1;
 
 	Human(String file,int x,int y){
 		try {
-			//java.net.URL url = getClass().getClassLoader().getResource(file);
-			//img = ImageIO.read(new File(url));
+//			url = getClass().getClassLoader().getResource(file);
+//			img = ImageIO.read(url);
+//			System.out.println(url);
 			img = ImageIO.read(new File(file));
 		} catch (Exception e) {
 			System.out.println("error Picture");

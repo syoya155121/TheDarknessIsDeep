@@ -53,13 +53,13 @@ public class GuiGameGra extends JPanel implements Runnable{
 		player.movePlayer(time,g);
 		boss.moveBoss(time,g);
 		int i=0;
-		if(time%20==0){
-			enemyBullets.add(new Bullet(".pic/bullet2.png",1000,20));
-			while( i<playerBullets.size()){		//弾描画 当たり判定てきとう
-				Bullet b2 = playerBullets.get(i);
-				b2.moveBullet(time,g);
-			}
-		}
+//		if(time%20==0){
+//			enemyBullets.add(new Bullet(".pic/bullet2.png",1000,20));
+//			while( i<playerBullets.size()){		//弾描画 当たり判定てきとう
+//				Bullet b2 = playerBullets.get(i);
+//				b2.moveBullet(time,g);
+//			}
+//		}
 
 		while( i<playerBullets.size()){		//弾描画 当たり判定てきとう
 			Bullet b = playerBullets.get(i);
