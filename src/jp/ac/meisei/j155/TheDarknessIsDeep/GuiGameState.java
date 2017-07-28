@@ -83,6 +83,8 @@ public class GuiGameState extends JLayeredPane{
 		debug.addMouseListener(new MouseListener(){
 			public void mouseClicked(MouseEvent e) {
 				GuiGameGra.playerBullets.clear();
+				GuiGameGra.enemyBullets.clear();
+				GuiGameGra.bossBullets.clear();
 				GameState.setState(States.Title);
 				MainGui.changePanel(GameState.getState());
 			}
@@ -99,7 +101,6 @@ public class GuiGameState extends JLayeredPane{
 		gs.add(bomb);
 		gs.add(bombNum);
 		gs.add(debug);
-
 
 
 	}

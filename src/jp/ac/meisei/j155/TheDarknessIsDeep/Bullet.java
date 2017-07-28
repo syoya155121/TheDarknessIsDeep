@@ -13,10 +13,6 @@ public class Bullet extends Human{
 		this.paintImg(g);
 		x+=5;
 	}
-	public void moveBullet2(int time,Graphics g){
-		this.paintImg(g);
-		x-=5;
-	}
 	public void init(){
 		this.x=sx;
 		this.y=sy;
@@ -32,7 +28,3 @@ public class Bullet extends Human{
 //		bullet[2] = new Human(".pic/bullet3.png",800,400);//敵弾2
 //	}
 }
-
-
-
-
