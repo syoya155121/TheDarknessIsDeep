@@ -10,8 +10,8 @@ public class Boss extends Human{
 	private int ptnx = 0;
 	private int ptny = 3;
 	private int sbx, sby,memx,memy,mbx,mby;
-	private boolean flag=false;
-	private int i=0;
+	private boolean flag=false,flag1=true,flag2=false,flag3=false,flag4=false,flag5=false,flag6=false,flag7=false,flag8=false;
+	private int i=1;
 	Random rnd = new Random();
 	int ran = rnd.nextInt(50);
 	Boss(String file, int x, int y) {
@@ -25,22 +25,61 @@ public class Boss extends Human{
 		//FIXME
 		System.out.println("BOSS");
 		//movepettern1();
-		if(time < 300){
+		if(flag1){
 			movepettern1();
-			System.out.println(count);
+			if(y>=600){
+				flag1=false;
+				flag2=true;
+			}
 		}
-		if(300 <= time && time <= 500){
+		if(flag2){
 			ReturnInitPos();
-			System.out.println(sbx);
-			System.out.println(sbx);
+			if(295<y&&305>y&&x>699){
+				flag2 = false;
+				flag3 = true;
+			}
 		}
-		if(500<time  && time<700){
+		if(flag3){	
 			movepettern2();
-			System.out.println(mbx);
-			System.out.println(mby);
+			if(mbx==x||mby==y){
+				flag3=false;
+				flag4=true;
+			}
 		}
-		if(700<time){
+		if(flag4){
 			ReturnInitPos();
+			if(295<y&&305>y&&x>699){
+				flag4 = false;
+				flag5 = true;
+			}
+		}
+		if(flag5){
+			movepettern1();
+			if(y<100){
+				flag5=false;
+				flag6=true;
+			}
+		}
+		if(flag6){
+			ReturnInitPos();
+			if(295<y&&305>y&&x>699){
+				flag6 = false;
+				flag7 = true;
+			}
+		}
+		if(flag7){
+			movepettern2();
+			if(mbx==x||mby==y){
+				flag7=false;
+				flag8=true;
+			}
+		}
+		if(flag8){
+			ReturnInitPos();
+			if(295<y&&305>y&&x>699){
+				flag8 = false;
+				flag1 = true;
+			}
 		}
 		this.paintImg(g);
 	}
@@ -49,15 +88,16 @@ public class Boss extends Human{
 		sbx = 700 - x;
 		sby = 300 - y;
 		if(sbx < 0){
-			x -= 5;
+			x -= 7;
 		}else if(sbx > 0){
-			x += 5;
+			x += 7;
 		}
 		if(sby < 0){
-			y -= 1;
+			y -= 5;
 		}else if(sby > 0){
-			y += 1;
+			y += 5;
 		}
+		flag=false;
 	}
 
 	public void movepettern1(){
@@ -69,10 +109,10 @@ public class Boss extends Human{
 			cn = -1;
 		}
 		x += ptnx;
-		if(y==600){
+		if(y>=600){
 			ptny = -3;
 		}
-		if(y==99){
+		if(y<=100){
 			ptny = 3;
 		}
 		y += ptny;
@@ -88,14 +128,14 @@ public class Boss extends Human{
 		sbx = mbx - x ;
 		sby = mby - y ;
 		if(sbx < 0){
-			x -= 5;
+			x -= 10;
 		}else if(sbx > 0){
-			x += 5;
+			x += 10;
 		}
 		if(sby < 0){
-			y -= 5;
+			y -= 10;
 		}else if(sby > 0){
-			y += 5;
+			y += 10;
 		}
 	}
 	public void init(){
@@ -104,6 +144,11 @@ public class Boss extends Human{
 		count =0;
 		ptnx = 0;
 		ptny = 3;
+		flag=false;
+		flag1=true;
+		flag2=false;
+		flag3=false;
+		flag4=false;
 		setLife(10);
 	}
 }
