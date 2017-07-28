@@ -31,7 +31,7 @@ public class BBullet extends Human{
 //		}else if(sby > 0){
 //			y += 5;
 //		}
-		x-=5;
+		x-=8;
 	}
 	public void init(){
 		this.x=sx;

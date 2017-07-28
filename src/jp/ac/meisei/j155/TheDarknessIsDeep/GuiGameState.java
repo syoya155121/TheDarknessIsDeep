@@ -103,6 +103,5 @@ public class GuiGameState extends JLayeredPane{
 		gs.add(debug);
 
 
-
 	}
 }

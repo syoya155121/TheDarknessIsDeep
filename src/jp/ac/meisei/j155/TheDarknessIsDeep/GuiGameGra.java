@@ -29,6 +29,7 @@ public class GuiGameGra extends JPanel implements Runnable{
 
 	static int flag=0;
 
+	
 	GuiGameGra(){
 		setBounds(0,0,1000,700);
 		setLayout(null);
@@ -73,7 +74,7 @@ public class GuiGameGra extends JPanel implements Runnable{
 			}
 			tmp=0;
 		}
-		if(time%60==0){
+		if(time%60==59){
 			bossBullets.add(new BBullet(".pic/bullet3.png",boss.x,boss.y));
 		}
 		while( tmp<bossBullets.size()){

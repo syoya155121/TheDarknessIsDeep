@@ -18,3 +18,4 @@ public class EBullet extends Human{
 		this.y=sy;
 	}
 }
+
