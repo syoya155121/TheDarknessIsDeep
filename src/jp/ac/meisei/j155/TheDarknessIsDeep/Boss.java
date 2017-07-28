@@ -10,6 +10,7 @@ public class Boss extends Human{
 	private int ptnx = 0;
 	private int ptny = 3;
 	private int sbx, sby,memx,memy,mbx,mby;
+	private boolean flag=false;
 	Random rnd = new Random();
 	int ran = rnd.nextInt(50);
 	Boss(String file, int x, int y) {
@@ -73,21 +74,22 @@ public class Boss extends Human{
 	}
 
 	public void movepettern2(){
-		{
+		if(!flag){
 			mbx = GuiGameGra.player.x;
 			mby = GuiGameGra.player.y;
-			sbx = mbx - x ;
-			sby = mby - y ;
-			if(sbx < 0){
-				x -= 5;
-			}else if(sbx > 0){
-				x += 5;
-			}
-			if(sby < 0){
-				y -= 5;
-			}else if(sby > 0){
-				y += 5;
-			}
+			flag=true;
+		}
+		sbx = mbx - x ;
+		sby = mby - y ;
+		if(sbx < 0){
+			x -= 5;
+		}else if(sbx > 0){
+			x += 5;
+		}
+		if(sby < 0){
+			y -= 5;
+		}else if(sby > 0){
+			y += 5;
 		}
 	}
 	public void init(){
