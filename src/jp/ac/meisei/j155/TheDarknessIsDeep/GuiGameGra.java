@@ -22,7 +22,7 @@ public class GuiGameGra extends JPanel implements Runnable{
 	int cnt2=0;
 	int cnt3=0;
 	int tmp=0;
-	
+
 	int vx,vy;
 
 	static Vector<Bullet> playerBullets = new Vector<Bullet>();
@@ -48,6 +48,7 @@ public class GuiGameGra extends JPanel implements Runnable{
 
 	}
 	public void paint(Graphics g){
+		GuiGameState.scoreNum.setText(String.valueOf(boss.getLife()));
 		//		requestFocus();
 		g.setColor(Color.BLACK);
 		g.fillRect(0, 0, 1000,700);
@@ -134,6 +135,7 @@ public class GuiGameGra extends JPanel implements Runnable{
 			if(boss.x-b.x<20 && boss.x-b.x>-60 && boss.y-b.y<20 && boss.y-b.y>-35){
 				hit++;
 				boss.subLife();
+				GuiGameState.scoreNum.setText(String.valueOf(boss.getLife()));
 			}
 
 			if(boss.getLife()<=0){
@@ -171,12 +173,13 @@ public class GuiGameGra extends JPanel implements Runnable{
 						}
 						break;
 
-					case 'l':
-						player.x=400;
-						player.y=400;
+//					case 'l':
+//						player.x=400;
+//						player.y=400;
+//						break;
 					default: break;
 					}
-					
+
 					cnt2++;
 				}
 			}

@@ -20,7 +20,7 @@ public class GuiResult extends JPanel{
 		if(GuiGameGra.flag==1) title="Game Over";
 		if(GuiGameGra.flag==2) title="Congratulations!!!!";
 		titleLabel.setText(title);
-		time.setText("Time :"+timenum);
+		time.setText("Time :       "+timenum);
 	}
 	GuiResult(){
 		setName("Title");
