@@ -23,7 +23,7 @@ public class Boss extends Human{
 
 	public void moveBoss(int time,Graphics g){
 		//FIXME
-		System.out.println("BOSS");
+		//System.out.println("BOSS");
 		if(flag1){
 			movepettern1();
 			if(y>=600){
@@ -38,7 +38,7 @@ public class Boss extends Human{
 				flag3 = true;
 			}
 		}
-		if(flag3){	
+		if(flag3){
 			movepettern2();
 			if(mbx>x){
 				flag3=false;
