@@ -11,6 +11,7 @@ public class Boss extends Human{
 	private int ptny = 3;
 	private int sbx, sby,memx,memy,mbx,mby;
 	private boolean flag=false;
+	private int i=0;
 	Random rnd = new Random();
 	int ran = rnd.nextInt(50);
 	Boss(String file, int x, int y) {
@@ -23,6 +24,7 @@ public class Boss extends Human{
 	public void moveBoss(int time,Graphics g){
 		//FIXME
 		System.out.println("BOSS");
+		//movepettern1();
 		if(time < 300){
 			movepettern1();
 			System.out.println(count);
@@ -47,14 +49,14 @@ public class Boss extends Human{
 		sbx = 700 - x;
 		sby = 300 - y;
 		if(sbx < 0){
-			x -= 2;
+			x -= 5;
 		}else if(sbx > 0){
-			x += 2;
+			x += 5;
 		}
 		if(sby < 0){
-			y -= 2;
+			y -= 1;
 		}else if(sby > 0){
-			y += 2;
+			y += 1;
 		}
 	}
 
@@ -69,7 +71,8 @@ public class Boss extends Human{
 		x += ptnx;
 		if(y==600){
 			ptny = -3;
-		}else if(y==100){
+		}
+		if(y==99){
 			ptny = 3;
 		}
 		y += ptny;

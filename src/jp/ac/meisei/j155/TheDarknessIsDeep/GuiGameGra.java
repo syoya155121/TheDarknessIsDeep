@@ -54,6 +54,7 @@ public class GuiGameGra extends JPanel implements Runnable{
 		player.movePlayer(time,g);
 		boss.moveBoss(time,g);
 		int i=0;
+
 		int j=0;
 		int tmp=0;
 
@@ -120,7 +121,7 @@ public class GuiGameGra extends JPanel implements Runnable{
 			Bullet b = playerBullets.get(i);
 			int hit =0;
 			b.moveBullet(time,g);
-			if(boss.x-b.x<20 && boss.x-b.x>-70 && boss.y-b.y<20 && boss.y-b.y>-25){
+			if(boss.x-b.x<20 && boss.x-b.x>-60 && boss.y-b.y<20 && boss.y-b.y>-35){
 				hit++;
 				boss.subLife();
 			}
@@ -149,14 +150,14 @@ public class GuiGameGra extends JPanel implements Runnable{
 				if(cnt%(1+cnt2+cnt2%10)==0){
 					cnt=0;
 					switch(e.getKeyChar()){
-					case 'w': player.y-=5; break;
-					case 's': player.y+=5; break;
-					case 'd': player.x+=5; break;
-					case 'a': player.x-=5; break;
-					case 'q': player.x-=5; player.y-=5; break;
-					case 'e': player.x+=5; player.y-=5; break;
-					case 'c': player.x+=5; player.y+=5; break;
-					case 'z': player.x-=5; player.y+=5; break;
+					case 'w': player.y-=2; break;
+					case 's': player.y+=2; break;
+					case 'd': player.x+=2; break;
+					case 'a': player.x-=2; break;
+					case 'q': player.x-=2; player.y-=2; break;
+					case 'e': player.x+=2; player.y-=2; break;
+					case 'c': player.x+=2; player.y+=2; break;
+					case 'z': player.x-=2; player.y+=2; break;
 					case ' ':
 						if(cnt3==0){
 							playerBullets.add(new Bullet(".pic/bullet1.png",player.x+90,player.y+20));
