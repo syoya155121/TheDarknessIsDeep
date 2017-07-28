@@ -21,10 +21,11 @@ public class GuiGameGra extends JPanel implements Runnable{
 	int cnt=0;
 	int cnt2=0;
 	int cnt3=0;
-	int tmp;
+	int tmp=0;
 
 	static Vector<Bullet> playerBullets = new Vector<Bullet>();
-	static Vector<Bullet> enemyBullets = new Vector<Bullet>();
+	static Vector<EBullet> enemyBullets = new Vector<EBullet>();
+	static Vector<BBullet> bossBullets = new Vector<BBullet>();
 
 	static int flag=0;
 
@@ -53,14 +54,68 @@ public class GuiGameGra extends JPanel implements Runnable{
 		player.movePlayer(time,g);
 		boss.moveBoss(time,g);
 		int i=0;
-		if(time%20==0){
-			enemyBullets.add(new Bullet(".pic/bullet2.png",1000,20));
-			while( i<playerBullets.size()){		//弾描画 当たり判定てきとう
-				Bullet b2 = playerBullets.get(i);
-				b2.moveBullet(time,g);
+		int j=0;
+		int tmp=0;
+
+		if(time%300==149){
+			for(int k=0;k<5;k++){
+				enemyBullets.add(new EBullet(".pic/bullet2.png",1000,tmp));
+				tmp+=150;
+			}
+			tmp=0;
+		}
+		if(time%300==299){
+			tmp=75;
+			for(int k=0;k<5;k++){
+				enemyBullets.add(new EBullet(".pic/bullet2.png",1000,tmp));
+				tmp+=150;
+			}
+			tmp=0;
+		}
+		if(time%60==0){
+			bossBullets.add(new BBullet(".pic/bullet3.png",boss.x,boss.y));
+		}
+		while( tmp<bossBullets.size()){
+			BBullet b3 = bossBullets.get(tmp);
+			int hit3=0;
+			b3.moveBullet3(time,g);
+			if(b3.x-player.x<100 && b3.x-player.x>-70 && b3.y-player.y<60 && b3.y-player.y>-30){
+				flag=1;
+				playerBullets.clear();
+				enemyBullets.clear();
+				bossBullets.clear();
+				GuiResult.vUpdate();
+				GameState.setState(States.Result);
+				MainGui.changePanel(GameState.getState());
+				break;
+			}
+			if(hit3>0 || b3.x<0){
+				bossBullets.remove(i);
+			}else{
+				tmp++;
 			}
 		}
 
+		while( j<enemyBullets.size()){
+			EBullet b2 = enemyBullets.get(j);
+			int hit2=0;
+			b2.moveBullet2(time,g);
+			if(b2.x-player.x<100 && b2.x-player.x>-70 && b2.y-player.y<60 && b2.y-player.y>-30){
+				flag=1;
+				playerBullets.clear();
+				enemyBullets.clear();
+				bossBullets.clear();
+				GuiResult.vUpdate();
+				GameState.setState(States.Result);
+				MainGui.changePanel(GameState.getState());
+				break;
+			}
+			if(hit2>0 || b2.x<0){
+				enemyBullets.remove(i);
+			}else{
+				j++;
+			}
+		}
 		while( i<playerBullets.size()){		//弾描画 当たり判定てきとう
 			Bullet b = playerBullets.get(i);
 			int hit =0;
@@ -73,18 +128,20 @@ public class GuiGameGra extends JPanel implements Runnable{
 			if(boss.getLife()<=0){
 				flag=2;
 				playerBullets.clear();
+				enemyBullets.clear();
+				bossBullets.clear();
 				GuiResult.vUpdate();
 				GameState.setState(States.Result);
 				MainGui.changePanel(GameState.getState());
 				break;
 			}
-
 			if(hit>0 || b.x>1000){
 				playerBullets.remove(i);
 			}else{
 				i++;
 			}
 		}
+
 		TheDarknessIsDeep.f.addKeyListener(new KeyListener(){
 			@Override
 			public void keyTyped(KeyEvent e){
@@ -133,6 +190,8 @@ public class GuiGameGra extends JPanel implements Runnable{
 		if(boss.x-player.x<100 && boss.x-player.x>-70 && boss.y-player.y<60 && boss.y-player.y>-30){
 			flag=1;
 			playerBullets.clear();
+			enemyBullets.clear();
+			bossBullets.clear();
 			GuiResult.vUpdate();
 			GameState.setState(States.Result);
 			MainGui.changePanel(GameState.getState());
